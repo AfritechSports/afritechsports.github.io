@@ -1,0 +1,67 @@
+window.AFTS={"pick": {"title": {"en": "Tell us who you are", "fr": "Dites-nous qui vous êtes", "sw": "Tuambie wewe ni nani"}, "sub": {"en": "So the right person at Afritech Sports replies to you.", "fr": "Pour que la bonne personne chez Afritech Sports vous réponde.", "sw": "Ili mtu sahihi wa Afritech Sports akujibu."}, "type": {"en": "I am", "fr": "Je suis", "sw": "Mimi ni"}, "team": {"en": "Team", "fr": "Équipe", "sw": "Timu"}, "level": {"en": "League level", "fr": "Niveau de championnat", "sw": "Kiwango cha ligi"}, "country": {"en": "Country", "fr": "Pays", "sw": "Nchi"}, "city": {"en": "City or town", "fr": "Ville", "sw": "Mji"}, "org": {"en": "Club, school or organisation (optional)", "fr": "Club, école ou organisation (facultatif)", "sw": "Klabu, shule au taasisi (si lazima)"}, "consent": {"en": "I agree that Afritech Sports keeps these details to reply to me and send me relevant updates. I can ask for them to be deleted at any time.", "fr": "J'accepte qu'Afritech Sports conserve ces informations pour me répondre et m'envoyer des nouvelles utiles. Je peux demander leur suppression à tout moment.", "sw": "Ninakubali Afritech Sports ihifadhi taarifa hizi ili kunijibu na kunitumia habari muhimu. Ninaweza kuomba zifutwe wakati wowote."}, "minor": {"en": "Players under 18: please ask a parent or guardian to contact us for you.", "fr": "Joueurs de moins de 18 ans : demandez à un parent ou tuteur de nous contacter.", "sw": "Wachezaji walio chini ya miaka 18: tafadhali mwombe mzazi au mlezi awasiliane nasi."}, "go_wa": {"en": "Continue to WhatsApp", "fr": "Continuer sur WhatsApp", "sw": "Endelea kwenye WhatsApp"}, "go_mail": {"en": "Send by email instead", "fr": "Envoyer plutôt par e-mail", "sw": "Tuma kwa barua pepe badala yake"}, "cancel": {"en": "Cancel", "fr": "Annuler", "sw": "Ghairi"}, "choose": {"en": "Choose…", "fr": "Choisir…", "sw": "Chagua…"}, "need": {"en": "Please choose who you are, add your country and tick the box.", "fr": "Merci d'indiquer qui vous êtes, votre pays, et de cocher la case.", "sw": "Tafadhali chagua wewe ni nani, weka nchi yako na uweke alama kwenye kisanduku."}, "hello": {"en": "Hi Afritech Sports,", "fr": "Bonjour Afritech Sports,", "sw": "Habari Afritech Sports,"}, "iam": {"en": "I'm", "fr": "je suis", "sw": "mimi ni"}, "from": {"en": "from", "fr": "de", "sw": "kutoka"}, "about": {"en": "I'd like to talk about", "fr": "J'aimerais parler de", "sw": "Ningependa kuzungumza kuhusu"}}, "types": [["parent", {"en": "Parent or guardian", "fr": "Parent ou tuteur", "sw": "Mzazi au mlezi"}, 0, 0], ["player", {"en": "Player (18 or over)", "fr": "Joueur (18 ans ou plus)", "sw": "Mchezaji (miaka 18 au zaidi)"}, 0, 0], ["coach", {"en": "Coach", "fr": "Entraîneur", "sw": "Kocha"}, 0, 0], ["scout", {"en": "Scout", "fr": "Recruteur", "sw": "Skauti"}, 0, 0], ["analyst", {"en": "Analyst", "fr": "Analyste", "sw": "Mchambuzi"}, 0, 0], ["agent", {"en": "Agent", "fr": "Agent", "sw": "Wakala"}, 0, 0], ["club", {"en": "Club", "fr": "Club", "sw": "Klabu"}, 1, 1], ["academy", {"en": "Academy", "fr": "Académie", "sw": "Akademia"}, 1, 0], ["school", {"en": "School", "fr": "École", "sw": "Shule"}, 1, 0], ["college", {"en": "College", "fr": "Collège / institut", "sw": "Chuo"}, 1, 0], ["university", {"en": "University", "fr": "Université", "sw": "Chuo kikuu"}, 1, 0], ["league", {"en": "League", "fr": "Ligue", "sw": "Ligi"}, 1, 1], ["federation", {"en": "Federation", "fr": "Fédération", "sw": "Shirikisho"}, 1, 0], ["sponsor", {"en": "Sponsor or investor", "fr": "Sponsor ou investisseur", "sw": "Mdhamini au mwekezaji"}, 0, 0], ["media", {"en": "Media", "fr": "Média", "sw": "Vyombo vya habari"}, 0, 0], ["other", {"en": "Other", "fr": "Autre", "sw": "Nyingine"}, 0, 0]], "teams": [["men", {"en": "Men's", "fr": "Masculine", "sw": "Wanaume"}], ["women", {"en": "Women's", "fr": "Féminine", "sw": "Wanawake"}], ["both", {"en": "Men's and women's", "fr": "Masculine et féminine", "sw": "Wanaume na wanawake"}], ["boys", {"en": "Boys", "fr": "Garçons", "sw": "Wavulana"}], ["girls", {"en": "Girls", "fr": "Filles", "sw": "Wasichana"}]], "levels": [["top", {"en": "Top division", "fr": "Première division", "sw": "Ligi kuu"}], ["second", {"en": "Second division", "fr": "Deuxième division", "sw": "Daraja la pili"}], ["lower", {"en": "Lower or regional division", "fr": "Division inférieure ou régionale", "sw": "Daraja la chini au la mkoa"}], ["amateur", {"en": "Amateur or community", "fr": "Amateur ou communautaire", "sw": "Ridhaa au jamii"}], ["youth", {"en": "Youth league", "fr": "Championnat de jeunes", "sw": "Ligi ya vijana"}], ["schools", {"en": "Schools or universities league", "fr": "Championnat scolaire ou universitaire", "sw": "Ligi ya shule au vyuo"}]], "news": [{"date": "2026-11-19", "pillar": "innovation", "href": "innovation/#desk", "h": {"en": "Our Tournament Desk is live for the FIFA U-17 World Cup", "fr": "Notre Desk Tournoi est lancé pour la Coupe du monde U-17 de la FIFA", "sw": "Dawati letu la Mashindano limeanza kwa Kombe la Dunia la FIFA U-17"}, "p": {"en": "Following Africa's ten nations in Qatar from 19 November to 13 December.", "fr": "Nous suivons les dix nations africaines au Qatar du 19 novembre au 13 décembre.", "sw": "Tunafuatilia mataifa kumi ya Afrika nchini Qatar kuanzia 19 Novemba hadi 13 Desemba."}}, {"date": "2026-11-18", "pillar": "innovation", "href": "", "h": {"en": "Our new website is live", "fr": "Notre nouveau site est en ligne", "sw": "Tovuti yetu mpya iko hewani"}, "p": {"en": "Sports technology, advisory services and innovation in one place, in English, French and Kiswahili.", "fr": "Technologie sportive, services de conseil et innovation en un seul endroit, en anglais, français et kiswahili.", "sw": "Teknolojia ya michezo, huduma za ushauri na ubunifu mahali pamoja, kwa Kiingereza, Kifaransa na Kiswahili."}}, {"date": "2026-11-16", "pillar": "advisory", "href": "advisory/#education", "h": {"en": "From Footage to Insight, Part 2, with FootLab", "fr": "From Footage to Insight, Partie 2, avec FootLab", "sw": "From Footage to Insight, Sehemu ya 2, pamoja na FootLab"}, "p": {"en": "FIFA training rewards, a live tagging session on a Kenyan match, and the January training programme.", "fr": "Indemnités de formation FIFA, annotation en direct d'un match kényan et le programme de formation de janvier.", "sw": "Fidia ya mafunzo ya FIFA, kuwekea alama mechi ya Kenya moja kwa moja, na programu ya mafunzo ya Januari."}}], "wa": "254715551506", "email": "Advisory@afritechsports.com", "sheet": ""};
+
+(function(){
+var A=window.AFTS,ok={en:1,fr:1,sw:1};
+function lang(){var c=document.querySelector('.lr:checked');return c?c.id.slice(2):'en'}
+function T(o){return o[lang()]||o.en}
+function src(){var m=/[?&]src=([a-z0-9_-]+)/i.exec(location.search);return m?m[1].toLowerCase():''}
+// language
+try{var k=null,m=/[?&]lang=(en|fr|sw)/.exec(location.search);if(m)k=m[1];if(!k){try{k=localStorage.getItem('afts-lang')}catch(e){}}
+if(!k||!ok[k]){var l=(navigator.language||'').toLowerCase();k=l.indexOf('fr')===0?'fr':l.indexOf('sw')===0?'sw':'en'}
+var r=document.getElementById('l-'+k);if(r)r.checked=true;document.documentElement.lang=k;
+document.querySelectorAll('.lr').forEach(function(x){x.addEventListener('change',function(){var v=this.id.slice(2);document.documentElement.lang=v;try{localStorage.setItem('afts-lang',v)}catch(e){};fillPicker()})})}catch(e){}
+// keep ?src on internal links
+try{var s=src();if(s)document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(!h||/^(https?:|mailto:|tel:|#|data:)/i.test(h))return;var p=h.split('#');a.setAttribute('href',p[0]+(p[0].indexOf('?')<0?'?':'&')+'src='+s+(p.length>1?'#'+p[1]:''))})}catch(e){}
+// news: 7 days on the home page, all items on the pillar page
+try{var now=Date.now(),base=document.body.getAttribute('data-base')||'';
+document.querySelectorAll('[data-news]').forEach(function(box){var mode=box.getAttribute('data-news'),list=box.querySelector('.news'),n=0;
+A.news.forEach(function(it){var age=(now-Date.parse(it.date+'T00:00:00Z'))/864e5;if(age<0)return;
+if(mode==='home'&&age>=7)return;if(mode!=='home'&&it.pillar!==mode)return;
+var a=document.createElement(it.href?'a':'div');a.className='ni';if(it.href)a.href=base+it.href;
+var d=new Date(it.date+'T12:00:00Z');
+['en','fr','sw'].forEach(function(L){var sp=document.createElement('span');sp.className='t t-'+L;sp.setAttribute('lang',L);
+var ds=d.toLocaleDateString(L==='sw'?'sw-KE':L,{day:'numeric',month:'long',year:'numeric'});
+sp.innerHTML='<div class="m"></div><b></b><span></span>';sp.querySelector('.m').textContent=ds;sp.querySelector('b').textContent=it.h[L];sp.querySelector('span').textContent=it.p[L];a.appendChild(sp)});
+list.appendChild(a);n++});
+if(n)box.hidden=false})}catch(e){}
+// who-are-you picker
+var M,topic=null;
+function opt(sel,arr,ph){sel.innerHTML='';var o=document.createElement('option');o.value='';o.textContent=ph;sel.appendChild(o);arr.forEach(function(x){var o=document.createElement('option');o.value=x[0];o.textContent=T(x[1]);sel.appendChild(o)})}
+function fillPicker(){if(!M)return;var P=A.pick;
+['title','sub','consent','minor','cancel'].forEach(function(k){var e=M.querySelector('[data-p='+k+']');if(e)e.textContent=T(P[k])});
+['type','team','level','country','city','org'].forEach(function(k){M.querySelector('[data-l='+k+']').firstChild.nodeValue=T(P[k])});
+M.querySelector('[data-p=go_wa]').textContent=T(P.go_wa);M.querySelector('[data-p=go_mail]').textContent=T(P.go_mail);
+var ty=M.querySelector('#pk-type'),v=ty.value;opt(ty,A.types,T(P.choose));ty.value=v;
+var tm=M.querySelector('#pk-team'),v2=tm.value;opt(tm,A.teams,T(P.choose));tm.value=v2;
+var lv=M.querySelector('#pk-level'),v3=lv.value;opt(lv,A.levels,T(P.choose));lv.value=v3;show()}
+function show(){var t=M.querySelector('#pk-type').value,row=A.types.filter(function(x){return x[0]===t})[0]||[0,0,0,0];
+M.querySelector('#pk-teamw').hidden=!row[2];M.querySelector('#pk-levelw').hidden=!row[3];M.querySelector('[data-p=minor]').hidden=!(t==='player'||t==='parent')}
+function label(sel){var o=sel.options[sel.selectedIndex];return o&&sel.value?o.textContent:''}
+function collect(){var g=function(i){return M.querySelector(i)};var ty=g('#pk-type');
+return{type:ty.value,typeL:label(ty),team:g('#pk-teamw').hidden?'':label(g('#pk-team')),level:g('#pk-levelw').hidden?'':label(g('#pk-level')),
+country:g('#pk-country').value.trim(),city:g('#pk-city').value.trim(),org:g('#pk-org').value.trim(),consent:g('#pk-ok').checked}}
+function message(d){var P=A.pick,who=[d.typeL,d.team,d.level].filter(Boolean).join(' · '),where=[d.city,d.country].filter(Boolean).join(', ');
+var c=lang()==='fr'?' : ':': ';var s=T(P.hello)+' '+T(P.iam)+c+who+(where?' ('+T(P.from)+' '+where+')':'')+(d.org?', '+d.org:'')+'. ';
+if(topic)s+=T(P.about)+c+topic+'. ';return s+'['+location.pathname+(src()?' · '+src():'')+']'}
+function save(d){try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'picker/'+d.type+'/'+(d.country||'-').toLowerCase(),title:d.typeL,event:true})}catch(e){}
+if(!A.sheet)return;try{var b=new URLSearchParams({type:d.typeL,team:d.team,level:d.level,country:d.country,city:d.city,org:d.org,topic:topic||'',page:location.pathname,lang:lang(),src:src(),consent:'yes'});
+if(navigator.sendBeacon)navigator.sendBeacon(A.sheet,b);else fetch(A.sheet,{method:'POST',mode:'no-cors',body:b})}catch(e){}}
+function submit(via){var d=collect();var err=M.querySelector('.err');if(!d.type||!d.country||!d.consent){err.textContent=T(A.pick.need);err.style.display='block';return}
+err.style.display='none';save(d);var msg=message(d);
+if(via==='wa')window.open('https://wa.me/'+A.wa+'?text='+encodeURIComponent(msg),'_blank','noopener');
+else location.href='mailto:'+A.email+'?subject='+encodeURIComponent('Afritech Sports: '+d.typeL+(d.country?' · '+d.country:''))+'&body='+encodeURIComponent(msg);
+close()}
+function close(){M.classList.remove('open');document.body.style.overflow=''}
+function open(t,preset){topic=t;M.classList.add('open');document.body.style.overflow='hidden';
+if(preset){M.querySelector('#pk-type').value=preset;show()}setTimeout(function(){M.querySelector('#pk-type').focus()},50)}
+M=document.getElementById('picker');if(M){fillPicker();
+M.querySelector('#pk-type').addEventListener('change',show);
+M.querySelector('[data-p=go_wa]').addEventListener('click',function(){submit('wa')});
+M.querySelector('[data-p=go_mail]').addEventListener('click',function(){submit('mail')});
+M.querySelector('[data-p=cancel]').addEventListener('click',close);
+M.addEventListener('click',function(e){if(e.target===M)close()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+document.querySelectorAll('[data-pick]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+var tp=this.getAttribute('data-topic');var tt=null;if(tp){try{tt=JSON.parse(tp)[lang()]}catch(x){}}
+open(tt,this.getAttribute('data-pick'))})})}
+})();
