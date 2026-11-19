@@ -63,7 +63,7 @@ a.card:hover{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,148,136,.2)}
 .pf b{display:block;font:700 21px/1.2 "Barlow Condensed",sans-serif;color:var(--ink);margin-bottom:4px}
 .prod{display:grid;gap:0;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:18px}
 @media (min-width:820px){.prod{grid-template-columns:5fr 6fr}}
-.prod img{width:100%;height:100%;object-fit:cover;background:#0b1220;min-height:220px}
+.prod img{width:100%;height:100%;max-height:460px;object-fit:cover;background:#fff;min-height:220px}
 .prod .pb{padding:20px}
 .prod dl{margin:10px 0 0}.prod dt{font:700 15px/1 "Barlow Condensed",sans-serif;letter-spacing:1px;text-transform:uppercase;color:var(--teal);margin-top:12px}.prod dd{margin:4px 0 0}
 .steps{display:grid;gap:12px;grid-template-columns:1fr 1fr;counter-reset:s}
@@ -72,6 +72,9 @@ a.card:hover{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,148,136,.2)}
 .st:before{content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;margin-bottom:8px}
 .st b{display:block;color:var(--ink);font-size:18px}
 .sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:18px}
+.sec.media{display:grid;gap:18px}
+@media (min-width:820px){.sec.media{grid-template-columns:2fr 3fr;align-items:start}}
+.sec.media img{border-radius:12px;width:100%;max-height:520px;object-fit:cover;object-position:top;border:1px solid var(--line)}
 .ev{display:grid;gap:12px;margin-top:14px}
 @media (min-width:820px){.ev{grid-template-columns:repeat(3,1fr)}}
 .evc{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--bg)}
