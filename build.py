@@ -163,7 +163,7 @@ try{var now=Date.now(),base=document.body.getAttribute('data-base')||'';
 document.querySelectorAll('[data-news]').forEach(function(box){var mode=box.getAttribute('data-news'),list=box.querySelector('.news'),n=0;
 A.news.forEach(function(it){var age=(now-Date.parse(it.date+'T00:00:00Z'))/864e5;if(age<0)return;
 if(mode==='home'&&age>=7)return;if(mode!=='home'&&it.pillar!==mode)return;
-var a=document.createElement(it.href?'a':'div');a.className='ni';if(it.href)a.href=base+it.href;
+var a=document.createElement(it.href?'a':'div');a.className='ni';if(it.href){var ext=/^https?:/.test(it.href);a.href=ext?it.href:base+it.href;if(ext){a.target='_blank';a.rel='noopener';}}
 var d=new Date(it.date+'T12:00:00Z');
 ['en','fr','sw'].forEach(function(L){var sp=document.createElement('span');sp.className='t t-'+L;sp.setAttribute('lang',L);
 var ds=d.toLocaleDateString(L==='sw'?'sw-KE':L,{day:'numeric',month:'long',year:'numeric'});
