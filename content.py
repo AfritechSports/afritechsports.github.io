@@ -16,6 +16,13 @@ UI = {
  "nav_tech": L("Sports Technology", "Technologie sportive", "Teknolojia ya Michezo"),
  "nav_adv": L("Advisory Services", "Services de conseil", "Huduma za Ushauri"),
  "nav_inn": L("Innovation", "Innovation", "Ubunifu"),
+ "nav_home": L("Home", "Accueil", "Nyumbani"),
+ "nav_menu": L("Menu", "Menu", "Menyu"),
+ "nav_desks": L("Our desks", "Nos plateformes", "Madawati yetu"),
+ "nav_miq": L("MatchIQ library", "Bibliothèque MatchIQ", "Maktaba ya MatchIQ"),
+ "nav_desk": L("U-17 Tournament Desk", "Desk Tournoi U-17", "Dawati la Mashindano U-17"),
+ "nav_cv": L("CV Desk", "Bureau CV", "Dawati la CV"),
+ "nav_talk": L("Talk to us", "Contactez-nous", "Wasiliana nasi"),
  "talk": L("Message us on WhatsApp", "Écrivez-nous sur WhatsApp", "Tutumie ujumbe WhatsApp"),
  "email": L("Email us", "Envoyez-nous un e-mail", "Tutumie barua pepe"),
  "reply": L("Tell us what you need and we'll come back to you.",
@@ -229,6 +236,14 @@ ADV = {
            "Uchambuzi wa mechi, ripoti za uskauti, CV za soka, ushauri wa kisheria na mafunzo, yanayotolewa na timu yetu Nairobi kwa klabu, akademia, shule, mawakala na mashirikisho."),
 }
 ADV_SECTIONS = [
+ {"id": "final", "tag": L("Latest MatchIQ report", "Dernier rapport MatchIQ", "Ripoti mpya ya MatchIQ"),
+  "h": L("Africa's first U-17 world title: our full read of the final", "Premier titre mondial U-17 pour l'Afrique : notre analyse complète de la finale", "Taji la kwanza la dunia U-17 kwa Afrika: uchambuzi wetu kamili wa fainali"),
+  "p": L("Nigeria beat Japan 2-1 in the FIFA U-17 Women's World Cup final in Rabat on 7 November 2026. Our MatchIQ dashboard shows how all three goals were made, where each team's game worked and where it broke down, player radars for both squads, and five dated next steps for the teams and federations. Built from 16 named sources, it opens on any phone and keeps working with no signal. Coaches, federations and clubs can have the same report on their own matches.",
+         "Le Nigeria a battu le Japon 2-1 en finale de la Coupe du monde féminine U-17 de la FIFA à Rabat, le 7 novembre 2026. Notre tableau de bord MatchIQ montre comment les trois buts ont été construits, ce qui a fonctionné et ce qui a cédé dans le jeu de chaque équipe, les radars des joueuses des deux effectifs et cinq prochaines étapes datées pour les équipes et les fédérations. Fondé sur 16 sources citées, il s'ouvre sur n'importe quel téléphone et fonctionne même sans réseau. Entraîneurs, fédérations et clubs peuvent obtenir le même rapport sur leurs propres matchs.",
+         "Nigeria iliifunga Japan 2-1 katika fainali ya Kombe la Dunia la Wanawake la FIFA U-17 mjini Rabat tarehe 7 Novemba 2026. Dashibodi yetu ya MatchIQ inaonyesha jinsi mabao yote matatu yalivyopatikana, mahali mchezo wa kila timu ulipofanya kazi na ulipovunjika, rada za wachezaji wa vikosi vyote viwili, na hatua tano zenye tarehe kwa timu na mashirikisho. Imejengwa kwa vyanzo 16 vilivyotajwa, inafunguka kwenye simu yoyote na inafanya kazi hata bila mtandao. Makocha, mashirikisho na klabu wanaweza kupata ripoti kama hii kwa mechi zao."),
+  "img": ("final.jpg", "Afritech MatchIQ dashboard: Japan 1-2 Nigeria, FIFA U-17 Women's World Cup final, 7 November 2026"),
+  "link": (MIQ + "matches/2026-11-07-japan-nigeria-u17w-final/", L("Open the final report", "Ouvrir le rapport de la finale", "Fungua ripoti ya fainali")),
+  "topic": L("a MatchIQ report like the Japan v Nigeria final", "un rapport MatchIQ comme celui de la finale Japon-Nigeria", "ripoti ya MatchIQ kama ya fainali ya Japan na Nigeria")},
  {"id": "analytics", "tag": L("Analytics", "Analyse", "Uchambuzi"),
   "h": L("Match analysis and MatchIQ", "Analyse de match et MatchIQ", "Uchambuzi wa mechi na MatchIQ"),
   "p": L("Pre-match briefs, post-match reports and interactive match dashboards that work on a phone with no signal. We also tag your match video: our Nairobi analysts log every pass, shot and duel so your coaches and scouts get the numbers.",
@@ -318,6 +333,9 @@ INN = {
 
 # ---------------------------------------------------------------- news (shows on the home page for 7 days, and on its pillar page)
 NEWS = [
+ {"date": "2026-11-20", "pillar": "advisory", "href": "advisory/#final",
+  "h": L("Our full report on Africa's first U-17 world title", "Notre rapport complet sur le premier titre mondial U-17 de l'Afrique", "Ripoti yetu kamili kuhusu taji la kwanza la dunia U-17 kwa Afrika"),
+  "p": L("Japan 1-2 Nigeria, FIFA U-17 Women's World Cup final: goals, phase read, player radars and next steps.", "Japon 1-2 Nigeria, finale de la Coupe du monde féminine U-17 de la FIFA : buts, lecture des phases, radars des joueuses et prochaines étapes.", "Japan 1-2 Nigeria, fainali ya Kombe la Dunia la Wanawake la FIFA U-17: mabao, uchambuzi wa awamu, rada za wachezaji na hatua zinazofuata.")},
  {"date": "2026-11-19", "pillar": "innovation", "href": "innovation/#desk",
   "h": L("Our Tournament Desk is live for the FIFA U-17 World Cup", "Notre Desk Tournoi est lancé pour la Coupe du monde U-17 de la FIFA", "Dawati letu la Mashindano limeanza kwa Kombe la Dunia la FIFA U-17"),
   "p": L("Following Africa's ten nations in Qatar from 19 November to 13 December.", "Nous suivons les dix nations africaines au Qatar du 19 novembre au 13 décembre.", "Tunafuatilia mataifa kumi ya Afrika nchini Qatar kuanzia 19 Novemba hadi 13 Desemba.")},

@@ -6,8 +6,7 @@ from content import *
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "out")
 SITE = "https://afritechsports.github.io/"
-FONTS = open(os.path.join(ROOT, "..", "fonts.css")).read()
-LOGO_URI = open(os.path.join(ROOT, "..", "logo.txt")).read()
+FONTS = open(os.path.join(ROOT, "fonts.css")).read()
 EMAIL = "Advisory@afritechsports.com"
 WA = "254715551506"
 LI_CO = "https://www.linkedin.com/company/afritech-sports-technology-and-innovation-group-limited/"
@@ -42,10 +41,23 @@ a{color:var(--teal)}img{max-width:100%;display:block}
 .langs label{border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:999px;padding:5px 12px;font-weight:600;font-size:14px;cursor:pointer;min-height:36px;display:inline-flex;align-items:center}
 #l-en:checked~.top label[for=l-en],#l-fr:checked~.top label[for=l-fr],#l-sw:checked~.top label[for=l-sw]{background:var(--teal);border-color:var(--teal)}
 .lr:focus-visible~.top .langs{outline:2px solid var(--teal2);outline-offset:3px;border-radius:8px}
-.nav{background:var(--navy);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
-.nav-in{max-width:1080px;margin:0 auto;padding:0 10px;display:flex}
-.nav a{color:#E6EEF7;text-decoration:none;font:700 15px/1 "Barlow Condensed",sans-serif;letter-spacing:.3px;text-transform:uppercase;padding:13px 7px;border-bottom:3px solid transparent}
-.nav a.on,.nav a:hover{border-bottom-color:var(--teal2);color:#fff}
+.nav{background:var(--navy)}
+.nav-in{max-width:1080px;margin:0 auto;padding:0 10px}
+.nl{display:none;align-items:center}
+.nm{display:flex;align-items:center;justify-content:space-between}
+@media (min-width:900px){.nl{display:flex}.nm{display:none}}
+.nav a,.nav summary,.nav .nt{color:#E6EEF7;text-decoration:none;font:700 15px/1 "Barlow Condensed",sans-serif;letter-spacing:.3px;text-transform:uppercase;padding:14px 9px;border-bottom:3px solid transparent;cursor:pointer;background:none;border-top:0;border-left:0;border-right:0;min-height:46px;display:inline-flex;align-items:center}
+.nav a.on,.nav a:hover,.nav summary:hover{border-bottom-color:var(--teal2);color:#fff}
+.nav summary{list-style:none}.nav summary::-webkit-details-marker{display:none}
+.nl summary:after{content:" ▾";white-space:pre}
+.nav .nt{margin-left:auto;background:var(--wa);color:#fff;border-radius:10px;border-bottom:0;padding:10px 14px;min-height:38px;margin-top:4px;margin-bottom:4px}
+.dd{position:relative}
+.ddl{position:absolute;top:100%;left:0;min-width:230px;background:var(--navy2);border-radius:0 0 12px 12px;padding:6px 0;box-shadow:0 12px 28px rgba(0,0,0,.3);z-index:30;display:flex;flex-direction:column}
+.mm .ddl{left:auto;right:0;min-width:260px}
+.ddl a,.ddl .nt{padding:12px 16px;border-bottom:0;width:100%}
+.ddl a:hover{background:var(--navy)}
+.ddl .nt{margin:8px 12px 6px;width:auto;justify-content:center}
+.ds{color:var(--teal2);font:700 12px/1 "Barlow Condensed",sans-serif;letter-spacing:1.3px;text-transform:uppercase;padding:12px 16px 4px;border-top:1px solid rgba(255,255,255,.12);margin-top:6px}
 .t{display:none}
 #l-en:checked~* .t-en,#l-fr:checked~* .t-fr,#l-sw:checked~* .t-sw{display:inline}
 #l-en:checked~* div.t-en,#l-fr:checked~* div.t-fr,#l-sw:checked~* div.t-sw,#l-en:checked~* p.t-en,#l-fr:checked~* p.t-fr,#l-sw:checked~* p.t-sw,#l-en:checked~* section.t-en,#l-fr:checked~* section.t-fr,#l-sw:checked~* section.t-sw{display:block}
@@ -96,6 +108,7 @@ a.card:hover{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,148,136,.2)}
 .st b{display:block;color:var(--ink);font-size:18px}
 .sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:18px}
 .sec.media{display:grid;gap:18px}
+#final{border-top:6px solid var(--cta)}#final h3{font-size:32px!important}
 @media (min-width:820px){.sec.media{grid-template-columns:2fr 3fr;align-items:start}}
 .sec.media img{border-radius:12px;width:100%;max-height:520px;object-fit:cover;object-position:top;border:1px solid var(--line)}
 .ev{display:grid;gap:12px;margin-top:14px}
@@ -157,6 +170,8 @@ var ds=d.toLocaleDateString(L==='sw'?'sw-KE':L,{day:'numeric',month:'long',year:
 sp.innerHTML='<div class="m"></div><b></b><span></span>';sp.querySelector('.m').textContent=ds;sp.querySelector('b').textContent=it.h[L];sp.querySelector('span').textContent=it.p[L];a.appendChild(sp)});
 list.appendChild(a);n++});
 if(n)box.hidden=false})}catch(e){}
+// menus: one open at a time, close on outside tap
+try{document.addEventListener('click',function(e){document.querySelectorAll('.nav details[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})})}catch(e){}
 // who-are-you picker
 var M,topic=null;
 function opt(sel,arr,ph){sel.innerHTML='';var o=document.createElement('option');o.value='';o.textContent=ph;sel.appendChild(o);arr.forEach(function(x){var o=document.createElement('option');o.value=x[0];o.textContent=T(x[1]);sel.appendChild(o)})}
@@ -194,7 +209,8 @@ M.querySelector('[data-p=go_mail]').addEventListener('click',function(){submit('
 M.querySelector('[data-p=cancel]').addEventListener('click',close);
 M.addEventListener('click',function(e){if(e.target===M)close()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
-document.querySelectorAll('[data-pick]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+if(location.hash==='#talk')setTimeout(function(){open(null,'')},300);
+document.querySelectorAll('[data-pick]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();document.querySelectorAll('.nav details[open]').forEach(function(d){d.open=false});
 var tp=this.getAttribute('data-topic');var tt=null;if(tp){try{tt=JSON.parse(tp)[lang()]}catch(x){}}
 open(tt,this.getAttribute('data-pick'))})})}
 })();
@@ -211,8 +227,17 @@ def tri(d, tag="span", cls=""):
 def page(path, title, desc, body, base, active=""):
     r = ref()
     url = SITE + path
-    nav = "".join(f'<a href="{base}{slug}/" class="{"on" if slug==active else ""}">{tri(UI[key])}</a>'
-                  for slug, key in [("technology", "nav_tech"), ("advisory", "nav_adv"), ("innovation", "nav_inn")])
+    home_href = base or "./"
+    prim = [(home_href, "nav_home", active == ""), *[(f"{base}{slug}/", key, slug == active) for slug, key in [("technology", "nav_tech"), ("advisory", "nav_adv"), ("innovation", "nav_inn")]]]
+    desks = [(MIQ, "nav_miq"), (DESK, "nav_desk"), (CVD, "nav_cv")]
+    links = "".join(f'<a href="{h}" class="{"on" if on else ""}"{" aria-current=page" if on else ""}>{tri(UI[k])}</a>' for h, k, on in prim)
+    dl = "".join(f'<a href="{h}">{tri(UI[k])} ↗</a>' for h, k in desks)
+    talk = f'<button type="button" class="nt" data-pick="">{tri(UI["nav_talk"])}</button>'
+    nav = (f'<div class="nl">{links}<details class="dd"><summary>{tri(UI["nav_desks"])}</summary><div class="ddl">{dl}</div></details>{talk}</div>'
+           f'<div class="nm"><a href="{home_href}" class="nh{" on" if active=="" else ""}">⌂ {tri(UI["nav_home"])}</a>'
+           f'<details class="dd mm"><summary>☰ {tri(UI["nav_menu"])}</summary><div class="ddl">'
+           + "".join(f'<a href="{h}" class="{"on" if on else ""}">{tri(UI[k])}</a>' for h, k, on in prim)
+           + f'<span class="ds">{tri(UI["nav_desks"])}</span>{dl}{talk}</div></details></div>')
     langs = "".join(f'<label for="l-{l}">{n}</label>' for l, n in LANGS)
     picker = f"""<div class="modal" id="picker" role="dialog" aria-modal="true" aria-labelledby="pk-h"><div class="mbox">
 <h3 id="pk-h" data-p="title"></h3><p data-p="sub" style="margin:0;color:var(--muted)"></p>
@@ -257,7 +282,7 @@ def hero(eyebrow, h1, lead, preset="", topic=None):
 <p class="small">{tri(UI['reply'])}</p></div></section>"""
 
 def band(preset="", topic=None):
-    return f"""<section class="band"><h2>{tri(UI['cta_h'])}</h2><p style="margin:0">{tri(UI['reply'])}</p>
+    return f"""<section class="band" id="contact"><h2>{tri(UI['cta_h'])}</h2><p style="margin:0">{tri(UI['reply'])}</p>
 <div class="acts">{pickbtn("wa", UI['talk'], preset, topic)}<a class="btn ghost" href="mailto:{EMAIL}">{tri(UI['email'])}</a></div>
 <p class="contact">{tri(UI['addr'])}<br>{EMAIL} · {tri(UI['phone'])}: +254 715 551 506<br><a href="{LI_CO}" target="_blank" rel="noopener">Afritech Sports on LinkedIn</a> · <a href="{LI_AR}" target="_blank" rel="noopener">Andrew Rukidi on LinkedIn</a></p></section>"""
 
