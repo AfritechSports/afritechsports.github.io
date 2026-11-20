@@ -336,7 +336,7 @@ INN = {
 PODCAST_LAST = {"date": "2026-11-19", "en": "Manchester United Sir Alex Ferguson Beyond the Trophies", "id": "7kEKR8CPpdEb0Wu4IZGDYy"}
 
 NEWS = [
- {"date": "2026-11-20", "pillar": "innovation", "href": "https://afritech-advisory.github.io/Afritech-Advisory-afritech-tournament-desk/qatar-u17-2026/",
+ {"date": "2026-11-20", "pillar": "innovation", "href": "https://afritech-advisory.github.io/Afritech-Advisory-afritech-tournament-desk/qatar-u17-2026/mozambique/#moz-den",
   "h": L("Matchday 1: Africa's first win comes from Mozambique", "Journée 1 : la première victoire africaine vient du Mozambique", "Siku ya 1: Ushindi wa kwanza wa Afrika umetoka kwa Msumbiji"),
   "p": L("Mozambique beat Denmark 4-0 in their first U-17 World Cup match. Egypt lost 1-2 to Greece with ten men, and Uganda lost 0-3 to Korea Republic. Results and next fixtures on our Tournament Desk, updated every day.", "Le Mozambique a battu le Danemark 4-0 pour son premier match de Coupe du monde U-17. L'Égypte s'est inclinée 1-2 face à la Grèce à dix, et l'Ouganda a perdu 0-3 contre la Corée du Sud. Résultats et prochains matchs sur notre Desk Tournoi, mis à jour chaque jour.", "Msumbiji waliifunga Denmark 4-0 katika mechi yao ya kwanza ya Kombe la Dunia U-17. Misri ilipoteza 1-2 dhidi ya Ugiriki ikiwa na wachezaji kumi, na Uganda ilipoteza 0-3 dhidi ya Korea Kusini. Matokeo na mechi zijazo kwenye Dawati letu la Mashindano, linalosasishwa kila siku.")},
  {"date": "2026-11-20", "pillar": "advisory", "href": "advisory/#final",

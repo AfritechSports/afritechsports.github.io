@@ -117,6 +117,11 @@ a.card:hover{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,148,136,.2)}
 .evc .m{font:700 13px/1.2 "Barlow Condensed",sans-serif;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
 .evc .s{display:inline-block;font-size:13px;font-weight:700;border-radius:999px;padding:2px 10px;margin:6px 0}
 .evc .s.past{background:var(--line);color:var(--ink)}.evc .s.next{background:var(--cta);color:#fff}
+.eph{margin:16px 0 6px;font-size:17px}
+.eps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.eps li{display:grid;grid-template-columns:4.2em minmax(0,1fr);gap:8px;align-items:baseline;border-top:1px solid var(--line);padding-top:6px}
+.eps .ed{font-size:13px;color:var(--muted);font-weight:600}
+.eps a{font-weight:600}
 .pods{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .pods a{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;text-decoration:none;font-weight:600;color:var(--ink)}
 .band{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--cta);border-radius:14px;padding:20px;margin-top:34px}
@@ -342,11 +347,36 @@ def build_adv():
     b.append(band() + f'<a class="back" href="../">{tri(UI["home"])}</a></div>')
     write("advisory/index.html", page("advisory/", ADV["title"], ADV["desc"], "".join(b), "../", "advisory"))
 
+def episodes():
+    """Every podcast episode in NEWS, newest first, listed permanently in the Podcast section.
+    The daily News sync adds episodes to NEWS, so this list updates itself."""
+    import datetime
+    rows = []
+    for it in NEWS:
+        h = it.get("href")
+        en = h.get("en", "") if isinstance(h, dict) else (h or "")
+        if "spotify.com/episode" not in en and "spotify.com/show" not in en:
+            continue
+        if "podcast" not in it["h"]["en"].lower():
+            continue
+        d = datetime.date.fromisoformat(it["date"])
+        links = ""
+        for l, _ in LANGS:
+            title = it["h"][l].split(":", 1)[-1].strip() if ":" in it["h"][l] else it["h"][l]
+            url = h[l] if isinstance(h, dict) else h
+            links += f'<a class="t t-{l}" lang="{l}" href="{url}" target="_blank" rel="noopener">{title}</a>'
+        rows.append(f'<li><span class="ed">{d.day} {d.strftime("%b")}</span>{links}</li>')
+    if not rows:
+        return ""
+    head = tri(L("Latest episodes", "Derniers épisodes", "Vipindi vya hivi karibuni"))
+    return f'<h4 class="eph">{head}</h4><ol class="eps">{"".join(rows)}</ol>'
+
+
 def build_inn():
     pods = "".join(f'<a href="{u}" target="_blank" rel="noopener">{n}</a>' for n, u in POD)
     b = [hero(EYEBROW, INN["h1"], INN["lead"]), '<div class="wrap">', newsbox("innovation", UI["latest"]),
          f'<section class="sec media" id="desk"><img src="../assets/img/desk.jpg" alt="Afritech Tournament Desk, FIFA U-17 World Cup Qatar 2026" loading="lazy"><div><span class="tag">{tri(INN["desk_tag"])}</span><h3 style="font-size:28px;margin-top:6px">{tri(INN["desk_h"])}</h3><p style="margin:6px 0 0">{tri(INN["desk_p"])}</p><div class="acts"><a class="btn ghost sm" href="{DESK}" target="_blank" rel="noopener">{tri(INN["desk_open"])} →</a>{pickbtn("wa sm", UI["msg"], "", INN["desk_topic"])}</div></div></section>',
-         f'<section class="sec media" id="podcast"><img src="../assets/img/podcast.jpg" alt="Deep Dive Into Soccer podcast: 5,000 streams and downloads" loading="lazy"><div><span class="tag">{tri(INN["pod_tag"])}</span><h3 style="font-size:28px;margin-top:6px">{INN["pod_h"]}</h3><p style="margin:6px 0 0">{tri(INN["pod_p"])}</p><div class="pods">{pods}</div><div class="acts">{pickbtn("wa sm", UI["msg"], "media", INN["pod_topic"])}</div></div></section>',
+         f'<section class="sec media" id="podcast"><img src="../assets/img/podcast.jpg" alt="Deep Dive Into Soccer podcast: 5,000 streams and downloads" loading="lazy"><div><span class="tag">{tri(INN["pod_tag"])}</span><h3 style="font-size:28px;margin-top:6px">{INN["pod_h"]}</h3><p style="margin:6px 0 0">{tri(INN["pod_p"])}</p><div class="pods">{pods}</div>{episodes()}<div class="acts">{pickbtn("wa sm", UI["msg"], "media", INN["pod_topic"])}</div></div></section>',
          band() + f'<a class="back" href="../">{tri(UI["home"])}</a></div>']
     write("innovation/index.html", page("innovation/", INN["title"], INN["desc"], "".join(b), "../", "innovation"))
 
