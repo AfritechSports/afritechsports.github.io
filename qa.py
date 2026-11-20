@@ -8,7 +8,7 @@ async def main():
     pg.on("pageerror",lambda e:errs.append(str(e)))
     pg.on("popup",lambda pp:errs.append("POPUP "+pp.url))
     for path in ["","technology/","advisory/","innovation/","privacy/"]:
-      for l in ["en","fr","sw"]:
+      for l in ["en","fr","sw","pt"]:
         await pg.goto(B+path+"?lang="+l);await pg.wait_for_timeout(150)
         ow=await pg.evaluate("document.documentElement.scrollWidth")
         # visible text in other languages?

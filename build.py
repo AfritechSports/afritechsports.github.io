@@ -11,7 +11,7 @@ EMAIL = "Advisory@afritechsports.com"
 WA = "254715551506"
 LI_CO = "https://www.linkedin.com/company/afritech-sports-technology-and-innovation-group-limited/"
 LI_AR = "https://www.linkedin.com/in/andrew-r-b1b514"
-LANGS = [("en", "English"), ("fr", "Français"), ("sw", "Kiswahili")]
+LANGS = [("en", "English"), ("fr", "Français"), ("sw", "Kiswahili"), ("pt", "Português")]
 SHEET_URL = "https://script.google.com/macros/s/AKfycbzneuWkn_1svVc7ty1YP54MT1Z-1tH3ouJGSQBXDKk32prFDXdqNXM5V_5iuCO_MfYHog/exec"
 GOAT = "https://afritechsports.goatcounter.com/count"
 E = html.escape
@@ -39,7 +39,7 @@ a{color:var(--teal)}img{max-width:100%;display:block}
 .brand small{display:block;font:700 11px/1.4 "Barlow Condensed",sans-serif;letter-spacing:1.3px;opacity:.75;text-transform:uppercase}
 .langs{display:flex;gap:6px}
 .langs label{border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:999px;padding:5px 12px;font-weight:600;font-size:14px;cursor:pointer;min-height:36px;display:inline-flex;align-items:center}
-#l-en:checked~.top label[for=l-en],#l-fr:checked~.top label[for=l-fr],#l-sw:checked~.top label[for=l-sw]{background:var(--teal);border-color:var(--teal)}
+#l-en:checked~.top label[for=l-en],#l-fr:checked~.top label[for=l-fr],#l-sw:checked~.top label[for=l-sw],#l-pt:checked~.top label[for=l-pt]{background:var(--teal);border-color:var(--teal)}
 .lr:focus-visible~.top .langs{outline:2px solid var(--teal2);outline-offset:3px;border-radius:8px}
 .nav{background:var(--navy)}
 .nav-in{max-width:1080px;margin:0 auto;padding:0 10px}
@@ -59,8 +59,8 @@ a{color:var(--teal)}img{max-width:100%;display:block}
 .ddl .nt{margin:8px 12px 6px;width:auto;justify-content:center}
 .ds{color:var(--teal2);font:700 12px/1 "Barlow Condensed",sans-serif;letter-spacing:1.3px;text-transform:uppercase;padding:12px 16px 4px;border-top:1px solid rgba(255,255,255,.12);margin-top:6px}
 .t{display:none}
-#l-en:checked~* .t-en,#l-fr:checked~* .t-fr,#l-sw:checked~* .t-sw{display:inline}
-#l-en:checked~* div.t-en,#l-fr:checked~* div.t-fr,#l-sw:checked~* div.t-sw,#l-en:checked~* p.t-en,#l-fr:checked~* p.t-fr,#l-sw:checked~* p.t-sw,#l-en:checked~* section.t-en,#l-fr:checked~* section.t-fr,#l-sw:checked~* section.t-sw{display:block}
+#l-en:checked~* .t-en,#l-fr:checked~* .t-fr,#l-sw:checked~* .t-sw,#l-pt:checked~* .t-pt{display:inline}
+#l-en:checked~* div.t-en,#l-fr:checked~* div.t-fr,#l-sw:checked~* div.t-sw,#l-pt:checked~* div.t-pt,#l-en:checked~* p.t-en,#l-fr:checked~* p.t-fr,#l-sw:checked~* p.t-sw,#l-pt:checked~* p.t-pt,#l-en:checked~* section.t-en,#l-fr:checked~* section.t-fr,#l-sw:checked~* section.t-sw,#l-pt:checked~* section.t-pt{display:block}
 .hero{background:radial-gradient(120% 140% at 85% 0%,#1d4f7a 0%,var(--navy) 45%,var(--navy2) 100%);color:#fff;position:relative;overflow:hidden}
 .hero:after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:2px solid rgba(255,255,255,.08);border-radius:50%;box-shadow:0 0 0 70px rgba(255,255,255,.03)}
 .hero-in{max-width:1080px;margin:0 auto;padding:30px 16px 34px;position:relative;z-index:1}
@@ -152,13 +152,13 @@ def js():
               "news": NEWS, "wa": WA, "email": EMAIL, "sheet": SHEET_URL}
     return "window.AFTS=" + json.dumps(picker, ensure_ascii=False) + ";\n" + r"""
 (function(){
-var A=window.AFTS,ok={en:1,fr:1,sw:1};
+var A=window.AFTS,ok={en:1,fr:1,sw:1,pt:1};
 function lang(){var c=document.querySelector('.lr:checked');return c?c.id.slice(2):'en'}
 function T(o){return o[lang()]||o.en}
 function src(){var m=/[?&]src=([a-z0-9_-]+)/i.exec(location.search);return m?m[1].toLowerCase():''}
 // language
-try{var k=null,m=/[?&]lang=(en|fr|sw)/.exec(location.search);if(m)k=m[1];if(!k){try{k=localStorage.getItem('afts-lang')}catch(e){}}
-if(!k||!ok[k]){var l=(navigator.language||'').toLowerCase();k=l.indexOf('fr')===0?'fr':l.indexOf('sw')===0?'sw':'en'}
+try{var k=null,m=/[?&]lang=(en|fr|sw|pt)/.exec(location.search);if(m)k=m[1];if(!k){try{k=localStorage.getItem('afts-lang')}catch(e){}}
+if(!k||!ok[k]){var l=(navigator.language||'').toLowerCase();k=l.indexOf('fr')===0?'fr':l.indexOf('sw')===0?'sw':l.indexOf('pt')===0?'pt':'en'}
 var r=document.getElementById('l-'+k);if(r)r.checked=true;document.documentElement.lang=k;
 document.querySelectorAll('.lr').forEach(function(x){x.addEventListener('change',function(){var v=this.id.slice(2);document.documentElement.lang=v;try{localStorage.setItem('afts-lang',v)}catch(e){};fillPicker()})})}catch(e){}
 // keep ?src on internal links
@@ -170,8 +170,8 @@ A.news.forEach(function(it){var age=(now-Date.parse(it.date+'T00:00:00Z'))/864e5
 if(mode==='home'&&age>=7)return;if(mode!=='home'&&it.pillar!==mode)return;
 var a=document.createElement(it.href?'a':'div');a.className='ni';if(it.href){var hr=typeof it.href==='string'?it.href:it.href.en;var ext=/^https?:/.test(hr);a.href=ext?hr:base+hr;if(ext){a.target='_blank';a.rel='noopener';}if(typeof it.href!=='string'){(function(a,m){a.addEventListener('click',function(){var k=(document.documentElement.lang||'en').slice(0,2);a.href=m[k]||m.en})})(a,it.href)}}
 var d=new Date(it.date+'T12:00:00Z');
-['en','fr','sw'].forEach(function(L){var sp=document.createElement('span');sp.className='t t-'+L;sp.setAttribute('lang',L);
-var ds=d.toLocaleDateString(L==='sw'?'sw-KE':L,{day:'numeric',month:'long',year:'numeric'});
+['en','fr','sw','pt'].forEach(function(L){var sp=document.createElement('span');sp.className='t t-'+L;sp.setAttribute('lang',L);
+var ds=d.toLocaleDateString(L==='sw'?'sw-KE':L==='pt'?'pt-BR':L,{day:'numeric',month:'long',year:'numeric'});
 sp.innerHTML='<div class="m"></div><b></b><span></span>';sp.querySelector('.m').textContent=ds;sp.querySelector('b').textContent=it.h[L];sp.querySelector('span').textContent=it.p[L];a.appendChild(sp)});
 list.appendChild(a);n++});
 if(n)box.hidden=false})}catch(e){}
@@ -264,10 +264,10 @@ def page(path, title, desc, body, base, active=""):
 <title>{E(title)}</title><meta name="description" content="{E(desc)}">
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}"><meta property="og:type" content="website"><meta property="og:image" content="{SITE}assets/img/share.jpg">
 <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="{url}">
-<link rel="alternate" hreflang="en" href="{url}?lang=en"><link rel="alternate" hreflang="fr" href="{url}?lang=fr"><link rel="alternate" hreflang="sw" href="{url}?lang=sw">
+<link rel="alternate" hreflang="en" href="{url}?lang=en"><link rel="alternate" hreflang="fr" href="{url}?lang=fr"><link rel="alternate" hreflang="sw" href="{url}?lang=sw"><link rel="alternate" hreflang="pt-BR" href="{url}?lang=pt">
 <link rel="icon" href="{base}assets/img/logo.jpg"><link rel="stylesheet" href="{base}assets/site.css">
 </head><body data-base="{base}"><!-- Afritech Sports reference {r} --><span aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">Afritech Sports reference {r}</span>
-<input type="radio" name="lang" id="l-en" class="lr" checked><input type="radio" name="lang" id="l-fr" class="lr"><input type="radio" name="lang" id="l-sw" class="lr">
+<input type="radio" name="lang" id="l-en" class="lr" checked><input type="radio" name="lang" id="l-fr" class="lr"><input type="radio" name="lang" id="l-sw" class="lr"><input type="radio" name="lang" id="l-pt" class="lr">
 <header class="top"><div class="top-in"><a class="brand" href="{base or './'}"><img src="{base}assets/img/logo.jpg" alt="Afritech Sports emblem" width="40" height="40"><b>Afritech Sports<small>Technology and Innovation Group · Nairobi</small></b></a>
 <div class="langs" role="group" aria-label="Language">{langs}</div></div><nav class="nav" aria-label="Main"><div class="nav-in">{nav}</div></nav></header>
 <main>{body}</main>

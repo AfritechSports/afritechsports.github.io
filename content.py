@@ -1,8 +1,16 @@
 # -*- coding: utf-8 -*-
-"""All page text for afritechsports.github.io, in English, French and Kiswahili."""
+"""All page text for afritechsports.github.io, in English, French, Kiswahili and Brazilian Portuguese (pt_br.py)."""
 
-def L(en, fr, sw):
-    return {"en": en, "fr": fr, "sw": sw}
+from pt_br import PT
+
+
+def L(en, fr, sw, pt=None):
+    """One text in every site language. Portuguese comes from pt_br.PT by the English text; a missing one stops the build."""
+    if pt is None:
+        if en not in PT:
+            raise KeyError("Missing Brazilian Portuguese for: " + en[:80])
+        pt = PT[en]
+    return {"en": en, "fr": fr, "sw": sw, "pt": pt}
 
 CVD = "https://afritech-advisory.github.io/afritech-sports-cv-desk/"
 MIQ = "https://afritech-advisory.github.io/afritech-matchiq/"
@@ -336,6 +344,9 @@ INN = {
 PODCAST_LAST = {"date": "2026-11-19", "en": "Manchester United Sir Alex Ferguson Beyond the Trophies", "id": "7kEKR8CPpdEb0Wu4IZGDYy"}
 
 NEWS = [
+ {"date": "2026-11-20", "pillar": "innovation", "href": "",
+  "h": L("Our website is now in Brazilian Portuguese", "Notre site est maintenant en portugais du Brésil", "Tovuti yetu sasa iko kwa Kireno cha Brazili"),
+  "p": L("Every page of Afritech Sports is now in English, French, Kiswahili and Brazilian Portuguese: choose Português at the top of any page.", "Toutes les pages d'Afritech Sports sont maintenant en anglais, en français, en kiswahili et en portugais du Brésil : choisissez Português en haut de chaque page.", "Kila ukurasa wa Afritech Sports sasa uko kwa Kiingereza, Kifaransa, Kiswahili na Kireno cha Brazili: chagua Português juu ya ukurasa wowote.")},
  {"date": "2026-11-20", "pillar": "innovation", "href": "https://afritech-advisory.github.io/Afritech-Advisory-afritech-tournament-desk/qatar-u17-2026/mozambique/#moz-den",
   "h": L("Matchday 1: Africa's first win comes from Mozambique", "Journée 1 : la première victoire africaine vient du Mozambique", "Siku ya 1: Ushindi wa kwanza wa Afrika umetoka kwa Msumbiji"),
   "p": L("Mozambique beat Denmark 4-0 in their first U-17 World Cup match. Egypt lost 1-2 to Greece with ten men, and Uganda lost 0-3 to Korea Republic. Results and next fixtures on our Tournament Desk, updated every day.", "Le Mozambique a battu le Danemark 4-0 pour son premier match de Coupe du monde U-17. L'Égypte s'est inclinée 1-2 face à la Grèce à dix, et l'Ouganda a perdu 0-3 contre la Corée du Sud. Résultats et prochains matchs sur notre Desk Tournoi, mis à jour chaque jour.", "Msumbiji waliifunga Denmark 4-0 katika mechi yao ya kwanza ya Kombe la Dunia U-17. Misri ilipoteza 1-2 dhidi ya Ugiriki ikiwa na wachezaji kumi, na Uganda ilipoteza 0-3 dhidi ya Korea Kusini. Matokeo na mechi zijazo kwenye Dawati letu la Mashindano, linalosasishwa kila siku.")},
