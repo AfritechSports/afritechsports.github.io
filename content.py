@@ -332,6 +332,9 @@ INN = {
 }
 
 # ---------------------------------------------------------------- news (shows on the home page for 7 days, and on its pillar page)
+# PODCAST_LAST: newest Deep Dive Into Soccer episode already in NEWS (daily sync compares Spotify "newest" against this)
+PODCAST_LAST = {"date": "2026-11-19", "en": "Manchester United Sir Alex Ferguson Beyond the Trophies", "id": "7kEKR8CPpdEb0Wu4IZGDYy"}
+
 NEWS = [
  {"date": "2026-11-20", "pillar": "innovation", "href": "https://afritech-advisory.github.io/Afritech-Advisory-afritech-tournament-desk/qatar-u17-2026/",
   "h": L("Matchday 1: Africa's first win comes from Mozambique", "Journée 1 : la première victoire africaine vient du Mozambique", "Siku ya 1: Ushindi wa kwanza wa Afrika umetoka kwa Msumbiji"),
@@ -342,13 +345,13 @@ NEWS = [
  {"date": "2026-11-19", "pillar": "innovation", "href": "innovation/#desk",
   "h": L("Our Tournament Desk is live for the FIFA U-17 World Cup", "Notre Desk Tournoi est lancé pour la Coupe du monde U-17 de la FIFA", "Dawati letu la Mashindano limeanza kwa Kombe la Dunia la FIFA U-17"),
   "p": L("Following Africa's ten nations in Qatar from 19 November to 13 December.", "Nous suivons les dix nations africaines au Qatar du 19 novembre au 13 décembre.", "Tunafuatilia mataifa kumi ya Afrika nchini Qatar kuanzia 19 Novemba hadi 13 Desemba.")},
- {"date": "2026-11-19", "pillar": "innovation", "href": "https://open.spotify.com/show/5ixoUtlCGjPJsQLjZaRYPs",
+ {"date": "2026-11-19", "pillar": "innovation", "href": L("https://open.spotify.com/episode/7kEKR8CPpdEb0Wu4IZGDYy", "https://open.spotify.com/episode/1PNit57s9JOsxdWpyGnGlO", "https://open.spotify.com/episode/3lodCF2ZGPEteUscyXWYE7"),
   "h": L("New podcast episode: Sir Alex Ferguson, beyond the trophies", "Nouvel épisode du podcast : Sir Alex Ferguson, au-delà des trophées", "Kipindi kipya cha podikasti: Sir Alex Ferguson, zaidi ya vikombe"),
   "p": L("Deep Dive Into Soccer on Manchester United's Sir Alex Ferguson, in English, French, Kiswahili and Portuguese.", "Deep Dive Into Soccer sur Sir Alex Ferguson et Manchester United, en anglais, français, kiswahili et portugais.", "Deep Dive Into Soccer kuhusu Sir Alex Ferguson wa Manchester United, kwa Kiingereza, Kifaransa, Kiswahili na Kireno.")},
  {"date": "2026-11-18", "pillar": "innovation", "href": "",
   "h": L("Our new website is live", "Notre nouveau site est en ligne", "Tovuti yetu mpya iko hewani"),
   "p": L("Sports technology, advisory services and innovation in one place, in English, French and Kiswahili.", "Technologie sportive, services de conseil et innovation en un seul endroit, en anglais, français et kiswahili.", "Teknolojia ya michezo, huduma za ushauri na ubunifu mahali pamoja, kwa Kiingereza, Kifaransa na Kiswahili.")},
- {"date": "2026-11-17", "pillar": "innovation", "href": "https://open.spotify.com/show/5ixoUtlCGjPJsQLjZaRYPs",
+ {"date": "2026-11-17", "pillar": "innovation", "href": L("https://open.spotify.com/episode/4pHjVYv66DU6z8VkvGgE0r", "https://open.spotify.com/episode/55SRP1i6FX0zPcmSJy3oB7", "https://open.spotify.com/episode/3t42lVkoaP2RXIwghomlJr"),
   "h": L("New podcast episode: UEFA's war against FIFA President Infantino", "Nouvel épisode du podcast : la guerre de l'UEFA contre le président de la FIFA, Infantino", "Kipindi kipya cha podikasti: Vita vya UEFA dhidi ya Rais wa FIFA Infantino"),
   "p": L("Deep Dive Into Soccer on the fight between UEFA and FIFA's president, in English, French, Kiswahili and Portuguese.", "Deep Dive Into Soccer sur le bras de fer entre l'UEFA et le président de la FIFA, en anglais, français, kiswahili et portugais.", "Deep Dive Into Soccer kuhusu mvutano kati ya UEFA na rais wa FIFA, kwa Kiingereza, Kifaransa, Kiswahili na Kireno.")},
  {"date": "2026-11-17", "pillar": "advisory", "href": "https://afritech-advisory.github.io/afritech-sports-cv-desk/scouts/alen-suljic/",
