@@ -344,6 +344,15 @@ INN = {
 PODCAST_LAST = {"date": "2026-11-23", "en": "Manchester United Training Drone Investigation", "id": "7MMHmgTWpP1562Z1SLYGRW"}
 
 NEWS = [
+ {"date": "2026-11-25", "pillar": "innovation", "href": "https://afritech-advisory.github.io/Afritech-Advisory-afritech-tournament-desk/qatar-u17-2026/uganda/#uga-ncl",
+  "h": L("Matchday 7: Uganda win 6-0 and reach the round of 32",
+         "Journée 7 : l'Ouganda gagne 6-0 et rejoint les seizièmes de finale",
+         "Siku ya 7: Uganda yashinda 6-0 na kufuzu hatua ya 32 bora",
+         "Rodada 7: Uganda vence por 6 a 0 e chega à fase de 32"),
+  "p": L("Uganda beat New Caledonia 6-0 for their first win at a U-17 World Cup and are through to the round of 32: captain Owen Mukisa scored a hat-trick. Egypt beat Panama 4-1, with two goals from Youssef Abdullah, and go through as second in Group A. Mozambique led Australia 2-0 and drew 2-2, finishing third in Group C on four points. Match reports and players to watch on our Tournament Desk.",
+         "L'Ouganda a battu la Nouvelle-Calédonie 6-0, sa première victoire en Coupe du monde U-17, et se qualifie pour les seizièmes de finale : le capitaine Owen Mukisa a signé un triplé. L'Égypte s'est imposée 4-1 face au Panama, avec un doublé de Youssef Abdullah, et se qualifie à la deuxième place du groupe A. Le Mozambique menait 2-0 contre l'Australie et a fait match nul 2-2 ; il termine troisième du groupe C avec quatre points. Comptes rendus et joueurs à suivre sur notre Desk Tournoi.",
+         "Uganda iliifunga New Caledonia 6-0, ushindi wao wa kwanza katika Kombe la Dunia U-17, na imefuzu hatua ya 32 bora: nahodha Owen Mukisa alifunga hat-trick. Misri iliifunga Panama 4-1, Youssef Abdullah akifunga mabao mawili, na imefuzu ikiwa ya pili katika Kundi A. Msumbiji iliongoza 2-0 dhidi ya Australia na ikatoka sare ya 2-2, ikimaliza ya tatu katika Kundi C ikiwa na pointi nne. Ripoti za mechi na wachezaji wa kufuatilia kwenye Dawati letu la Mashindano.",
+         "Uganda venceu a Nova Caledônia por 6 a 0, sua primeira vitória em Copas do Mundo Sub-17, e está classificada para a fase de 32: o capitão Owen Mukisa marcou três gols. O Egito venceu o Panamá por 4 a 1, com dois gols de Youssef Abdullah, e avança em segundo lugar no Grupo A. Moçambique abriu 2 a 0 contra a Austrália e empatou por 2 a 2, terminando em terceiro no Grupo C com quatro pontos. Relatórios dos jogos e jogadores para acompanhar na nossa Mesa do Torneio.")},
  {"date": "2026-11-24", "pillar": "innovation", "href": "https://afritech-advisory.github.io/Afritech-Advisory-afritech-tournament-desk/qatar-u17-2026/algeria/#alg-mne",
   "h": L("Matchday 6: Algeria win for the first time at a U-17 World Cup",
          "Journée 6 : première victoire de l'Algérie en Coupe du monde U-17",
