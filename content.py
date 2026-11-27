@@ -150,6 +150,7 @@ PILLARS = [
     "Ce que nous créons et faisons vivre nous-mêmes pour mettre le football africain en lumière.",
     "Tunachojenga na kuendesha wenyewe ili kuliweka soka la Afrika kwenye ramani."),
   [L("Tournament Desk: FIFA U-17 World Cup", "Desk Tournoi : Coupe du monde U-17 de la FIFA", "Dawati la Mashindano: Kombe la Dunia la FIFA U-17"),
+   L("Commission a tournament desk for your competition", "Commandez un desk pour votre compétition", "Agiza dawati la mashindano kwa mashindano yako", "Contrate uma central para a sua competição"),
    L("Podcast: Deep Dive Into Soccer - Football - Futbol", "Podcast : Deep Dive Into Soccer - Football - Futbol", "Podikasti: Deep Dive Into Soccer - Football - Futbol")]),
 ]
 WHO = [  # title, line, link, preset type
@@ -167,7 +168,7 @@ WHO = [  # title, line, link, preset type
   "advisory/#scouting", "agent"),
  (L("Federations and leagues", "Fédérations et ligues", "Mashirikisho na ligi"),
   L("Match intelligence, match data and technology for teams and competitions.", "Analyse, données de match et technologie pour les sélections et compétitions.", "Uchambuzi, data za mechi na teknolojia kwa timu na mashindano."),
-  "advisory/#analytics", "federation"),
+  DESK + "commission/", "federation"),
  (L("Sports technology buyers", "Acheteurs de technologie sportive", "Wanunuzi wa teknolojia ya michezo"),
   L("Smart shin guards and GPS vests, chosen with you and set up.", "Protège-tibias connectés et gilets GPS, choisis avec vous et installés.", "Vilinda-muundi janja na fulana za GPS, tunavichagua pamoja nawe na kuvisimika."),
   "technology/", "club"),
@@ -330,6 +331,7 @@ INN = {
              "Du 19 novembre au 13 décembre 2026, notre Desk Tournoi suit les dix nations africaines match après match, annote les moments clés et note les joueurs pour repérer les talents du tournoi.",
              "Kuanzia 19 Novemba hadi 13 Desemba 2026, Dawati letu la Mashindano linafuatilia mataifa kumi ya Afrika mechi kwa mechi, likiwekea alama matukio muhimu na kuwapa wachezaji alama ili kupata vipaji bora vya mashindano."),
  "desk_open": L("Open the Tournament Desk", "Ouvrir le Desk Tournoi", "Fungua Dawati la Mashindano"),
+ "desk_comm": L("Commission a desk for your tournament", "Commandez un desk pour votre tournoi", "Agiza dawati kwa mashindano yako", "Contrate uma central para o seu torneio"),
  "desk_topic": L("the U-17 World Cup Tournament Desk", "le Desk Tournoi de la Coupe du monde U-17", "Dawati la Mashindano la Kombe la Dunia U-17"),
  "pod_tag": L("Podcast", "Podcast", "Podikasti"),
  "pod_h": "Deep Dive Into Soccer - Football - Futbol",
@@ -344,6 +346,15 @@ INN = {
 PODCAST_LAST = {"date": "2026-11-26", "en": "How Math Replaced the Soccer Scout - The State of MLS Analytics: 2026", "id": "09QAUUg75sILrbSENW98v3"}
 
 NEWS = [
+ {"date": "2026-11-27", "pillar": "innovation", "href": DESK + "commission/",
+  "h": L("Commission a tournament desk for your competition, at any level",
+         "Commandez un desk pour votre compétition, à tous les niveaux",
+         "Agiza dawati la mashindano kwa mashindano yako, katika ngazi yoyote",
+         "Contrate uma central para a sua competição, em qualquer nível"),
+  "p": L("The desk we run at the U-17 World Cup is now on offer for any football tournament, youth to senior, men's and women's, from schools and counties to federations: results, goal clips, match reports, scout cards and radars in four languages. The one requirement is video of every match; a recording after the final whistle is enough.",
+         "Le desk que nous faisons vivre à la Coupe du monde U-17 est désormais proposé pour tout tournoi de football, des jeunes aux seniors, masculin comme féminin, des écoles et départements jusqu'aux fédérations : résultats, clips des buts, comptes rendus de match, fiches d'observation et radars en quatre langues. Une seule condition : la vidéo de chaque match ; un enregistrement après le coup de sifflet final suffit.",
+         "Dawati tunaloliendesha kwenye Kombe la Dunia U-17 sasa linapatikana kwa mashindano yoyote ya soka, kuanzia vijana hadi wakubwa, wanaume na wanawake, kuanzia shule na kaunti hadi mashirikisho: matokeo, klipu za mabao, ripoti za mechi, kadi za wachezaji na rada kwa lugha nne. Sharti moja ni video ya kila mechi; rekodi baada ya filimbi ya mwisho inatosha.",
+         "A central que fazemos na Copa do Mundo Sub-17 agora está disponível para qualquer torneio de futebol, da base ao profissional, masculino e feminino, de escolas e municípios a federações: resultados, vídeos dos gols, relatórios de jogo, relatórios de observação e radares em quatro idiomas. A única exigência é o vídeo de todos os jogos; uma gravação depois do apito final já basta.")},
  {"date": "2026-11-26", "pillar": "innovation", "href": L("https://open.spotify.com/episode/09QAUUg75sILrbSENW98v3", "https://open.spotify.com/episode/2DdpxB1eD0ItLcpWTH3hQn", "https://open.spotify.com/episode/1EnzlD1AVwu7U0TWlDqwZl", "https://open.spotify.com/episode/4OBpsNm0prEH8KoTtPlON3"),
   "h": L("New podcast episode: How math replaced the soccer scout, the state of MLS analytics in 2026", "Nouvel épisode du podcast : comment les mathématiques ont remplacé le recruteur de football, l'état des statistiques en MLS en 2026", "Kipindi kipya cha podikasti: Jinsi hisabati ilivyochukua nafasi ya skauti wa soka, hali ya uchanganuzi wa MLS mwaka 2026", "Novo episódio do podcast: como a matemática substituiu o olheiro de futebol e o panorama da análise de dados na MLS em 2026"),
   "p": L("Deep Dive Into Soccer on how data analytics is changing scouting in Major League Soccer in 2026, in English, French, Kiswahili and Portuguese.", "Deep Dive Into Soccer sur la façon dont l'analyse de données transforme le recrutement en Major League Soccer en 2026, en anglais, français, kiswahili et portugais.", "Deep Dive Into Soccer kuhusu jinsi uchanganuzi wa takwimu unavyobadilisha usakaji wa vipaji katika Major League Soccer mwaka 2026, kwa Kiingereza, Kifaransa, Kiswahili na Kireno.", "Deep Dive Into Soccer sobre como a análise de dados está mudando a observação de jogadores na Major League Soccer em 2026, em inglês, francês, suaíli e português.")},
