@@ -232,8 +232,8 @@ def tri(d, tag="span", cls=""):
 import json as _json
 # Google: name the site and the company "Afritech Sports" so a search for the name finds this home site (Andrew, 27 Nov 2026)
 LD = "".join('<script type="application/ld+json">' + _json.dumps(x, ensure_ascii=False) + "</script>" for x in (
-    {"@context": "https://schema.org", "@type": "WebSite", "name": "Afritech Sports", "alternateName": ["Afritech Sports Technology and Innovation Group", "afritechsports"], "url": "https://afritechsports.github.io/"},
-    {"@context": "https://schema.org", "@type": "Organization", "name": "Afritech Sports", "legalName": "Afritech Sports Technology and Innovation Group Limited",
+    {"@context": "https://schema.org", "@type": "WebSite", "name": "Afritech Sports", "alternateName": ["Afritech Sports Technology and Innovation Group", "Afritech Sports Technology and Innovation Group Limited", "afritechsports"], "url": "https://afritechsports.github.io/"},
+    {"@context": "https://schema.org", "@type": "Organization", "name": "Afritech Sports", "legalName": "Afritech Sports Technology and Innovation Group Limited", "alternateName": ["Afritech Sports Technology and Innovation Group", "Afritech Sports Technology and Innovation Group Ltd"],
      "url": "https://afritechsports.github.io/", "logo": "https://afritechsports.github.io/assets/img/logo.jpg", "email": "Advisory@afritechsports.com", "telephone": "+254715551506",
      "address": {"@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE"},
      "sameAs": ["https://www.linkedin.com/company/afritech-sports-technology-and-innovation-group-limited/", "https://afritech-advisory.github.io/Afritech-Advisory-afritech-tournament-desk/"]}))
@@ -280,7 +280,7 @@ def page(path, title, desc, body, base, active=""):
 <header class="top"><div class="top-in"><a class="brand" href="{base or './'}"><img src="{base}assets/img/logo.jpg" alt="Afritech Sports emblem" width="40" height="40"><b>Afritech Sports<small>Technology and Innovation Group · Nairobi</small></b></a>
 <div class="langs" role="group" aria-label="Language">{langs}</div></div><nav class="nav" aria-label="Main"><div class="nav-in">{nav}</div></nav></header>
 <main>{body}</main>
-<footer class="foot">© 2026 Afritech Sports Technology and Innovation Group Ltd. {tri(UI['rights'])} · {EMAIL} · <a href="{base}privacy/">{tri(UI['privacy'])}</a><br>{tri(UI['terms'])}</footer>
+<footer class="foot">© 2026 Afritech Sports Technology and Innovation Group Ltd. {tri(UI['rights'])} · {EMAIL} · <a href="{base}privacy/">{tri(UI['privacy'])}</a> · <a href="{LI_CO}" target="_blank" rel="noopener">LinkedIn</a><br>{tri(UI['terms'])}</footer>
 {picker}
 <script src="{base}assets/site.js" defer></script>
 <script data-goatcounter="{GOAT}" async src="//gc.zgo.at/count.js"></script>

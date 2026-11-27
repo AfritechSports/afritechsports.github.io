@@ -116,8 +116,8 @@ LEVELS = [("top", L("Top division", "Première division", "Ligi kuu")),
 
 # ---------------------------------------------------------------- home
 HOME = {
- "title": "Afritech Sports | Sports technology, advisory services and innovation for African football",
- "desc": "Afritech Sports, Nairobi: player tracking technology, match analysis, scouting dossiers, football CVs, legal guidance, training and innovation for African football.",
+ "title": "Afritech Sports | Afritech Sports Technology and Innovation Group, Nairobi",
+ "desc": "Afritech Sports Technology and Innovation Group (Afritech Sports), Nairobi: player tracking technology, match analysis, scouting dossiers, football CVs, legal guidance, training and innovation for African football.",
  "eyebrow": L("Afritech Sports · Nairobi, Kenya", "Afritech Sports · Nairobi, Kenya", "Afritech Sports · Nairobi, Kenya"),
  "h1": L("Find football talent, read the game and get the technology working, across Africa.",
          "Trouver les talents du football, lire le jeu et faire fonctionner la technologie, partout en Afrique.",
