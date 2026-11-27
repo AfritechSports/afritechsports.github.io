@@ -341,9 +341,12 @@ INN = {
 
 # ---------------------------------------------------------------- news (shows on the home page for 7 days, and on its pillar page)
 # PODCAST_LAST: newest Deep Dive Into Soccer episode already in NEWS (daily sync compares Spotify "newest" against this)
-PODCAST_LAST = {"date": "2026-11-23", "en": "Manchester United Training Drone Investigation", "id": "7MMHmgTWpP1562Z1SLYGRW"}
+PODCAST_LAST = {"date": "2026-11-26", "en": "How Math Replaced the Soccer Scout - The State of MLS Analytics: 2026", "id": "09QAUUg75sILrbSENW98v3"}
 
 NEWS = [
+ {"date": "2026-11-26", "pillar": "innovation", "href": L("https://open.spotify.com/episode/09QAUUg75sILrbSENW98v3", "https://open.spotify.com/episode/2DdpxB1eD0ItLcpWTH3hQn", "https://open.spotify.com/episode/1EnzlD1AVwu7U0TWlDqwZl", "https://open.spotify.com/episode/4OBpsNm0prEH8KoTtPlON3"),
+  "h": L("New podcast episode: How math replaced the soccer scout, the state of MLS analytics in 2026", "Nouvel épisode du podcast : comment les mathématiques ont remplacé le recruteur de football, l'état des statistiques en MLS en 2026", "Kipindi kipya cha podikasti: Jinsi hisabati ilivyochukua nafasi ya skauti wa soka, hali ya uchanganuzi wa MLS mwaka 2026", "Novo episódio do podcast: como a matemática substituiu o olheiro de futebol e o panorama da análise de dados na MLS em 2026"),
+  "p": L("Deep Dive Into Soccer on how data analytics is changing scouting in Major League Soccer in 2026, in English, French, Kiswahili and Portuguese.", "Deep Dive Into Soccer sur la façon dont l'analyse de données transforme le recrutement en Major League Soccer en 2026, en anglais, français, kiswahili et portugais.", "Deep Dive Into Soccer kuhusu jinsi uchanganuzi wa takwimu unavyobadilisha usakaji wa vipaji katika Major League Soccer mwaka 2026, kwa Kiingereza, Kifaransa, Kiswahili na Kireno.", "Deep Dive Into Soccer sobre como a análise de dados está mudando a observação de jogadores na Major League Soccer em 2026, em inglês, francês, suaíli e português.")},
  {"date": "2026-11-25", "pillar": "innovation", "href": "https://afritech-advisory.github.io/Afritech-Advisory-afritech-tournament-desk/qatar-u17-2026/uganda/#uga-ncl",
   "h": L("Matchday 7: Uganda win 6-0 and reach the round of 32",
          "Journée 7 : l'Ouganda gagne 6-0 et rejoint les seizièmes de finale",
