@@ -229,6 +229,15 @@ def tri(d, tag="span", cls=""):
     c = (cls + " ") if cls else ""
     return "".join(f'<{tag} class="{c}t t-{l}" lang="{l}">{d[l]}</{tag}>' for l, _ in LANGS)
 
+import json as _json
+# Google: name the site and the company "Afritech Sports" so a search for the name finds this home site (Andrew, 27 Nov 2026)
+LD = "".join('<script type="application/ld+json">' + _json.dumps(x, ensure_ascii=False) + "</script>" for x in (
+    {"@context": "https://schema.org", "@type": "WebSite", "name": "Afritech Sports", "alternateName": ["Afritech Sports Technology and Innovation Group", "afritechsports"], "url": "https://afritechsports.github.io/"},
+    {"@context": "https://schema.org", "@type": "Organization", "name": "Afritech Sports", "legalName": "Afritech Sports Technology and Innovation Group Limited",
+     "url": "https://afritechsports.github.io/", "logo": "https://afritechsports.github.io/assets/img/logo.jpg", "email": "Advisory@afritechsports.com", "telephone": "+254715551506",
+     "address": {"@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE"},
+     "sameAs": ["https://www.linkedin.com/company/afritech-sports-technology-and-innovation-group-limited/", "https://afritech-advisory.github.io/Afritech-Advisory-afritech-tournament-desk/"]}))
+
 def page(path, title, desc, body, base, active=""):
     r = ref()
     url = SITE + path
@@ -265,7 +274,7 @@ def page(path, title, desc, body, base, active=""):
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}"><meta property="og:type" content="website"><meta property="og:image" content="{SITE}assets/img/share.jpg">
 <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="{url}">
 <link rel="alternate" hreflang="en" href="{url}?lang=en"><link rel="alternate" hreflang="fr" href="{url}?lang=fr"><link rel="alternate" hreflang="sw" href="{url}?lang=sw"><link rel="alternate" hreflang="pt-BR" href="{url}?lang=pt">
-<link rel="icon" href="{base}assets/img/logo.jpg"><link rel="stylesheet" href="{base}assets/site.css">
+{LD if path == "" else ""}<link rel="icon" href="{base}assets/img/logo.jpg"><link rel="stylesheet" href="{base}assets/site.css">
 </head><body data-base="{base}"><!-- Afritech Sports reference {r} --><span aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">Afritech Sports reference {r}</span>
 <input type="radio" name="lang" id="l-en" class="lr" checked><input type="radio" name="lang" id="l-fr" class="lr"><input type="radio" name="lang" id="l-sw" class="lr"><input type="radio" name="lang" id="l-pt" class="lr">
 <header class="top"><div class="top-in"><a class="brand" href="{base or './'}"><img src="{base}assets/img/logo.jpg" alt="Afritech Sports emblem" width="40" height="40"><b>Afritech Sports<small>Technology and Innovation Group · Nairobi</small></b></a>
@@ -390,7 +399,7 @@ def build_redirects():
         to = SITE + new
         write(old + "index.html", f'<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><link rel="canonical" href="{to}"><meta http-equiv="refresh" content="0; url={to}"><script>location.replace("{to.split("#")[0]}"+location.search+"{("#"+to.split("#")[1]) if "#" in to else ""}")</script></head><body><a href="{to}">Afritech Sports</a></body></html>')
 
-ROBOTS = "# Afritech Sports. Content may not be used to train AI models.\n" + "".join(f"User-agent: {b}\nDisallow: /\n" for b in ["GPTBot","ChatGPT-User","CCBot","ClaudeBot","anthropic-ai","Google-Extended","Applebot-Extended","PerplexityBot","Bytespider","Meta-ExternalAgent","Amazonbot","cohere-ai"]) + f"User-agent: *\nAllow: /\nSitemap: {SITE}sitemap.xml\n"
+ROBOTS = "# Afritech Sports. Content may not be used to train AI models.\n" + "".join(f"User-agent: {b}\nDisallow: /\n" for b in ["GPTBot","ChatGPT-User","CCBot","ClaudeBot","anthropic-ai","Google-Extended","Applebot-Extended","PerplexityBot","Bytespider","Meta-ExternalAgent","Amazonbot","cohere-ai","AhrefsBot","SemrushBot","MJ12bot","DotBot","PetalBot"]) + f"User-agent: *\nAllow: /\nSitemap: {SITE}sitemap.xml\n"
 
 if __name__ == "__main__":
     shutil.rmtree(OUT, ignore_errors=True)
@@ -403,4 +412,6 @@ if __name__ == "__main__":
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{SITE}{p}</loc></url>" for p in ["", "technology/", "advisory/", "innovation/", "privacy/"]) + "</urlset>\n")
     write("README.md", "# Afritech Sports\n\nHome site of Afritech Sports Technology and Innovation Group Limited, Nairobi: https://afritechsports.github.io/\n\n© 2026 Afritech Sports Technology and Innovation Group Ltd. All rights reserved. The text, forms and design in this repository may not be copied or republished without written permission. Contact: Advisory@afritechsports.com\n")
     write(".nojekyll", "")
+    # Google Search Console ownership file (Andrew, 27 Nov 2026): must stay, or the property loses verification
+    write("google8651b71c765154ef.html", "google-site-verification: google8651b71c765154ef.html")
     print("built")
