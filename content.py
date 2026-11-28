@@ -331,10 +331,6 @@ INN = {
              "Du 19 novembre au 13 décembre 2026, notre Desk Tournoi suit les dix nations africaines match après match, annote les moments clés et note les joueurs pour repérer les talents du tournoi.",
              "Kuanzia 19 Novemba hadi 13 Desemba 2026, Dawati letu la Mashindano linafuatilia mataifa kumi ya Afrika mechi kwa mechi, likiwekea alama matukio muhimu na kuwapa wachezaji alama ili kupata vipaji bora vya mashindano."),
  "desk_open": L("Open the Tournament Desk", "Ouvrir le Desk Tournoi", "Fungua Dawati la Mashindano"),
- "desk_price": L("For tournament organisers: Desk Starter from US$1,500 in Africa and US$3,000 in the USA and the rest of the world, Desk Pro from US$4,500 and US$9,000. You add it to each team's entry fee, and scouts, coaches and clubs follow the desk free.",
-                 "Pour les organisateurs de tournois : Desk Starter à partir de 1 500 US$ en Afrique et de 3 000 US$ aux États-Unis et dans le reste du monde, Desk Pro à partir de 4 500 US$ et 9 000 US$. Vous l'ajoutez aux frais d'inscription de chaque équipe, et les recruteurs, entraîneurs et clubs suivent le desk gratuitement.",
-                 "Kwa waandaaji wa mashindano: Desk Starter kuanzia US$1,500 barani Afrika na US$3,000 Marekani na sehemu nyingine za dunia, Desk Pro kuanzia US$4,500 na US$9,000. Unaliongeza kwenye ada ya usajili ya kila timu, na maskauti, makocha na klabu hulifuatilia dawati bure.",
-                 "Para organizadores de torneios: Desk Starter a partir de US$ 1.500 na África e US$ 3.000 nos Estados Unidos e no resto do mundo, Desk Pro a partir de US$ 4.500 e US$ 9.000. Você inclui o valor na taxa de inscrição de cada equipe, e olheiros, treinadores e clubes acompanham a central de graça."),
  "desk_comm": L("Commission a desk for your tournament", "Commandez un desk pour votre tournoi", "Agiza dawati kwa mashindano yako", "Contrate uma central para o seu torneio"),
  "desk_topic": L("the U-17 World Cup Tournament Desk", "le Desk Tournoi de la Coupe du monde U-17", "Dawati la Mashindano la Kombe la Dunia U-17"),
  "pod_tag": L("Podcast", "Podcast", "Podikasti"),
@@ -350,15 +346,6 @@ INN = {
 PODCAST_LAST = {"date": "2026-11-26", "en": "How Math Replaced the Soccer Scout - The State of MLS Analytics: 2026", "id": "09QAUUg75sILrbSENW98v3"}
 
 NEWS = [
- {"date": "2026-11-27", "pillar": "innovation", "href": DESK + "commission/#price",
-  "h": L("Tournament Desk prices are now on the commission page",
-         "Les tarifs du Desk Tournoi sont désormais sur la page de commande",
-         "Bei za Dawati la Mashindano sasa ziko kwenye ukurasa wa kuagiza",
-         "Os preços da central de torneio já estão na página de contratação"),
-  "p": L("Organisers can now see what a desk costs and add it to each team's entry fee: Desk Starter, Desk Pro and a custom desk under your own brand, priced for Africa and for the USA and the rest of the world. Scouts, coaches and clubs follow every desk free.",
-         "Les organisateurs voient désormais le prix d'un desk et peuvent l'ajouter aux frais d'inscription de chaque équipe : Desk Starter, Desk Pro et un desk sur mesure à votre marque, avec des tarifs pour l'Afrique et pour les États-Unis et le reste du monde. Les recruteurs, entraîneurs et clubs suivent chaque desk gratuitement.",
-         "Waandaaji sasa wanaweza kuona gharama ya dawati na kuiongeza kwenye ada ya usajili ya kila timu: Desk Starter, Desk Pro na dawati maalum lenye chapa yako, kwa bei za Afrika na za Marekani na sehemu nyingine za dunia. Maskauti, makocha na klabu hufuatilia kila dawati bure.",
-         "Os organizadores já podem ver quanto custa uma central e incluir o valor na taxa de inscrição de cada equipe: Desk Starter, Desk Pro e uma central sob medida com a sua marca, com preços para a África e para os Estados Unidos e o resto do mundo. Olheiros, treinadores e clubes acompanham todas as centrais de graça.")},
  {"date": "2026-11-27", "pillar": "innovation", "href": DESK + "commission/",
   "h": L("Commission a tournament desk for your competition, at any level",
          "Commandez un desk pour votre compétition, à tous les niveaux",
