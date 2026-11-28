@@ -26,13 +26,14 @@ def header(base, active):
     return f'''<header class="top"><div class="top-in"><a class="brand" href="{base or './'}"><img src="{base}assets/img/logo.jpg" alt="Afritech Sports logo" width="44" height="44"><b>Afritech Sports<small>Technology &amp; Innovation Group · Nairobi</small></b></a>
 <a class="live" href="{DESK}qatar-u17-2026/" target="_blank" rel="noopener"><i></i>{t('Live: U-17 Tournament Desk', 'En direct : Desk U-17', 'Moja kwa moja: Dawati la U-17', 'Ao vivo: Mesa Sub-17')}</a>
 <div class="langs" role="group" aria-label="Language"><label for="l-en" title="English">EN</label><label for="l-fr" title="Français">FR</label><label for="l-sw" title="Kiswahili">SW</label><label for="l-pt" title="Português">PT</label></div>
-<button type="button" class="btn go1 talk" data-pick="">{t("Let’s talk", "Parlons-en", "Tuongee", "Vamos conversar")}</button>
-<button type="button" class="menu-btn" aria-expanded="false" aria-controls="menu"><span class="mb-l">{t('Menu', 'Menu', 'Menyu', 'Menu')}</span><span class="mb-i" aria-hidden="true"><i></i><i></i></span></button></div></header>
+<button type="button" class="talk-link" data-pick="">{t("Let’s talk", "Parlons-en", "Tuongee", "Vamos conversar")}</button>
+<button type="button" class="menu-btn" aria-expanded="false" aria-controls="menu"><i class="mdot" aria-hidden="true"></i><span class="mb-l">{t('Menu', 'Menu', 'Menyu', 'Menu')}</span><span class="mb-x" aria-hidden="true"><i></i><i></i></span></button></div></header>
 <nav class="menu" id="menu" aria-label="Main" aria-hidden="true"><div class="menu-in"><ol class="mlist">{li}</ol>
 <aside class="maside"><p class="mk">{t('Our live desks', 'Nos desks en ligne', 'Madawati yetu hewani', 'Nossas mesas no ar')}</p><div class="mdesks">{dk}</div>
 <p class="mk">{t('Language', 'Langue', 'Lugha', 'Idioma')}</p><div class="mlangs"><label for="l-en">English</label><label for="l-fr">Français</label><label for="l-sw">Kiswahili</label><label for="l-pt">Português</label></div>
 <p class="mk">{t('Talk to us', 'Contact', 'Wasiliana nasi', 'Fale com a gente')}</p><a href="mailto:Advisory@afritechsports.com">Advisory@afritechsports.com</a><a href="tel:+254715551506">+254 715 551 506</a>
-<p class="mk">{t('Follow', 'Suivre', 'Fuatilia', 'Siga')}</p><a href="https://www.linkedin.com/company/afritech-sports-technology-and-innovation-group-limited/" target="_blank" rel="noopener">LinkedIn ↗</a></aside></div></nav>'''
+<p class="mk">{t('Follow', 'Suivre', 'Fuatilia', 'Siga')}</p><a href="https://www.linkedin.com/company/afritech-sports-technology-and-innovation-group-limited/" target="_blank" rel="noopener">LinkedIn ↗</a></aside></div></nav>
+<div class="mbar"><button type="button" data-pick=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>{t("Let’s talk", "Parlons-en", "Tuongee", "Vamos conversar")}</button><a href="{base}#first-move">{t('Free match read', 'Analyse gratuite', 'Uchambuzi bure', 'Análise grátis')}</a></div>'''
 
 PAGES = {'index.html': ('', ''), 'technology/index.html': ('../', 'technology/'), 'advisory/index.html': ('../', 'advisory/'),
          'innovation/index.html': ('../', 'innovation/'), 'privacy/index.html': ('../', ''), 'about/index.html': ('../', 'about/')}
@@ -43,5 +44,7 @@ if __name__ == '__main__':
         s = p.read_text(encoding='utf-8')
         a = s.index('<header class="top">')
         b = s.index('</nav>', a) + 6
+        if s[b:].lstrip().startswith('<div class="mbar">'):
+            b = s.index('</div>', s.index('<div class="mbar">', b)) + 6
         s = s[:a] + header(base, act) + s[b:]
         p.write_text(s, encoding='utf-8'); print('header ->', f)

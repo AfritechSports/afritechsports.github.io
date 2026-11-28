@@ -133,7 +133,7 @@ m.addEventListener('click',function(e){if(e.target.closest('a,button'))set(false
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&root.classList.contains('menu-open')){set(false);b.focus()}})})();
 // v4: roll-over text on buttons and menu links (letters stagger in the menu)
 (function(){function letters(n){var w=document.createTreeWalker(n,NodeFilter.SHOW_TEXT,null),list=[],x;while(x=w.nextNode())list.push(x);var i=0;list.forEach(function(tn){var f=document.createDocumentFragment();tn.nodeValue.split('').forEach(function(c){if(c===' '){f.appendChild(document.createTextNode(' '));return}var s=document.createElement('span');s.className='ch';s.style.setProperty('--i',i++);s.textContent=c;f.appendChild(s)});tn.parentNode.replaceChild(f,tn)})}
-function roll(el,split){if(el.querySelector('.rl'))return;var inner=el.innerHTML;el.innerHTML='<span class="rl"><span class="r1">'+inner+'</span><span class="r2" aria-hidden="true">'+inner+'</span></span>';if(split){el.querySelectorAll('.r1,.r2').forEach(letters)}}
+function roll(el,split){if(el.querySelector('.rl'))return;var ar=el.querySelector(':scope>.ar');if(ar)el.removeChild(ar);var inner=el.innerHTML.trim();el.innerHTML='<span class="rl"><span class="r1">'+inner+'</span><span class="r2" aria-hidden="true">'+inner+'</span></span>';if(ar)el.appendChild(ar);if(split){el.querySelectorAll('.r1,.r2').forEach(letters)}}
 document.querySelectorAll('.btn:not([data-p]),.menu-btn .mb-l').forEach(function(el){roll(el,false)});
 document.querySelectorAll('.mlist .ml').forEach(function(el){roll(el,true)})})();
 // v4: hero project showcase, auto-advancing with wipe and phone flip
