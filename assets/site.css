@@ -748,3 +748,73 @@ body{padding-bottom:90px}}
 .sound{background:var(--green);border-radius:0}
 .h-hero h1{font-size:clamp(46px,5.3vw,86px)!important}@media (max-width:999px){.h-hero h1{font-size:clamp(44px,11vw,86px)!important}}
 .hero .eyebrow,.dark .eyebrow,.grad .eyebrow{color:#E6EEF6!important}
+/* ================= v6: kit galleries, evidence carousel, live method video ================= */
+.poster video{width:100%;height:auto;display:block;background:#fff}
+.kit{background:linear-gradient(160deg,#E6F4EA 0%,#F4F5F0 60%)}
+.kits{display:grid;gap:28px}
+@media (min-width:980px){.kits{grid-template-columns:1fr 1fr}}
+.kp{background:#fff;border-top:5px solid var(--green);box-shadow:0 30px 60px -40px rgba(14,27,63,.5);display:flex;flex-direction:column}
+.gal{position:relative;aspect-ratio:4/3;overflow:hidden;background:#0E1B3F}
+.gal .g{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity 1s ease,transform 6s linear}
+.gal .g.on{opacity:1;transform:scale(1)}
+.gdots{position:absolute;left:16px;bottom:14px;display:flex;gap:6px;z-index:2}
+.gdots i{width:26px;height:4px;background:rgba(255,255,255,.45)}.gdots i.on{background:var(--green)}
+.kb{padding:26px 24px 28px;display:flex;flex-direction:column;gap:12px}
+.kb .lbl{position:static;align-self:flex-start}
+.kb h3{font:400 clamp(32px,3.4vw,44px)/1 var(--disp);text-transform:uppercase;margin:0;color:var(--navy)}
+.kb p{margin:0;color:var(--text)}
+.ks{list-style:none;margin:4px 0 6px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:3px solid var(--green)}
+.ks li{padding:12px 8px 0 0;font-size:14px;color:var(--muted);line-height:1.35}
+.ks b{display:block;font:400 30px/1 var(--disp);color:var(--navy);margin-bottom:4px}
+.evrow{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,1fr);gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;-webkit-overflow-scrolling:touch}
+@media (min-width:1000px){.evrow{grid-auto-flow:row;grid-template-columns:1.25fr 1fr .8fr;overflow:visible}}
+.evx{scroll-snap-align:start;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:#DCE6F0}
+.evx img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border-top:5px solid var(--green);transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.evx:hover img{transform:translateY(-6px)}
+.evx .lbl{position:static;align-self:flex-start}
+.evx b{font:400 26px/1.05 var(--disp);text-transform:uppercase;color:#fff}
+.evx>span.t{font-size:15.5px;color:#C7D3E2}
+/* ================= v6: phone readability and no plain white bands ================= */
+@media (max-width:760px){
+ body{font-size:18px;line-height:1.65;background:#E9F5EC}
+ p,li,.lead,.smeta>span.t,.shead p,.au p,.vt li,.svc .body p,.svc .body li,.fc-b p,.fc-b li,.mv li,.kb p,.ks li,.reality p,.step p,.num>span,.ni b,.ni span span{font-size:17.5px!important;line-height:1.6}
+ .muted,.shead p,.au p,.vt li,.num>span,.h-hero .lead{color:#2E3A55!important}
+ .kick,.eyebrow,.lbl,.mn,.ni .m,.fine,.src,.cap,.h-meta,.fc-hint{font-size:12.5px!important;letter-spacing:.16em!important}
+ .btn{font-size:14px!important;min-height:58px}
+ .btn.sm{font-size:13px!important;min-height:50px}
+ h2{font-size:clamp(40px,11vw,60px)}
+ .sx{padding:64px 0}
+ /* hero becomes a navy band with white type on phones */
+ .h-hero{background:radial-gradient(130% 80% at 100% 0%,#173D7A 0%,var(--navy) 55%,#08112B 100%)!important;color:#fff}
+ .h-hero h1,.h-hero .sub,.h-hero h1 .it,.ulink,.slink,.h-meta b{color:#fff!important}
+ .h-hero .lead,.h-meta{color:#C9D6E6!important}
+ .h-hero .eyebrow{color:#E6EEF6!important}
+ .h-hero .pitchlines *{stroke:#fff!important}
+ .smeta b{color:#fff!important}.smeta,.smeta>span.t{color:#C9D6E6!important}
+ .dots button{background:rgba(255,255,255,.25)}
+ /* plain light sections become brand-tinted bands */
+ .sx:not(.dark):not(.deep):not(.grad):not(.ink):not(.steps4):not(.band-sky){background:#E9F5EC}
+ #who{background:#E4EFF9!important}
+ .wrap{background:#E9F5EC}
+ .mv:not(.feat),.fc-f,.fc-cap,.kp,.news .ni{background:#fff}
+ .mv:not(.feat){border-top:5px solid var(--green)}
+ .fc-cap h3,.kb h3{font-size:30px}
+ .num b{font-size:64px}
+ .au h3{font-size:34px}
+ .ks{grid-template-columns:1fr 1fr 1fr}
+ .tick-in>span{font-size:26px}
+}
+.prod .gal{aspect-ratio:auto;min-height:320px;height:100%}
+@media (max-width:760px){
+ .dark .shead p,.deep .shead p,.grad .shead p,.ink .shead p,.steps4 .shead p,.dark .reality p,.deep .evx>span.t,.steps4 .step p,.deep .svc .body p,.deep .svc .body li{color:#D2DCEA!important}
+ .dark .num>span,.deep .num>span{color:#D2DCEA!important}
+}
+/* touch screens and phones: no flip, the card shows front and details stacked (no empty white space) */
+@media (hover:none),(max-width:760px){
+ .fc-in{display:flex!important;flex-direction:column;transform:none!important}
+ .fc-f,.fc-b{backface-visibility:visible;-webkit-backface-visibility:visible}
+ .fc-b{transform:none!important;padding:22px 20px 24px}
+ .fc-b .fc-n,.fc-b h3{display:none}
+ .fc-hint{display:none!important}
+ .fc-cap{flex:none;padding-bottom:16px}
+}

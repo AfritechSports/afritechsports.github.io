@@ -152,3 +152,10 @@ ld(mons[1]);ld(phs[1]);arm();
 document.addEventListener('visibilitychange',function(){if(document.hidden)clearTimeout(timer);else arm()})})();
 // v4: tap to flip cards on touch screens
 (function(){document.querySelectorAll('.fc').forEach(function(c){c.addEventListener('click',function(e){if(e.target.closest('a,button'))return;if(window.matchMedia('(hover:none)').matches)c.classList.toggle('flipped')})})})();
+// v6: product galleries cross-fade with a slow zoom
+(function(){document.querySelectorAll('[data-gal]').forEach(function(g){var im=g.querySelectorAll('.g'),d=g.querySelectorAll('.gdots i'),i=0;if(im.length<2)return;
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduce)return;
+function go(n){i=n%im.length;im.forEach(function(x,k){x.classList.toggle('on',k===i)});d.forEach(function(x,k){x.classList.toggle('on',k===i)})}
+var t=null;function start(){if(!t)t=setInterval(function(){go(i+1)},3800)}function stop(){clearInterval(t);t=null}
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?start():stop()})}).observe(g)}else start();
+d.forEach(function(x,k){x.addEventListener('click',function(){go(k)})})})})();
