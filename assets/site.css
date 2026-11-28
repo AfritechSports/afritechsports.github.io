@@ -415,3 +415,4 @@ a.ni:hover{background:var(--card);padding-left:14px;color:var(--text)}
 .dark .cta-line p,.ink .cta-line p{color:#E7EDF5}
 .svc .body .acts{margin-top:16px}
 @media (prefers-reduced-motion:reduce){.orb,.pulse,.node,.bit,.sound{animation:none}}
+.fd.solo{grid-template-columns:1fr;max-width:900px}
