@@ -349,3 +349,22 @@ a.ni:hover{background:var(--card);padding-left:14px;color:var(--text)}
 @media (max-width:600px){[data-news=home] .ni span span{display:none}}
 .wrap h2{margin-top:clamp(44px,5vw,64px)}
 .wrap .band h2,.wrap .sec h2{margin-top:0}
+/* MatchIQ promo + video analysis */
+.miq{display:grid;gap:44px;align-items:center}
+@media (min-width:900px){.miq{grid-template-columns:.75fr 1.25fr}}
+.vframe{position:relative;background:#06101F;border-radius:6px;overflow:hidden;box-shadow:0 34px 60px -30px rgba(9,19,43,.6)}
+.vframe.portrait{aspect-ratio:4/5;max-width:440px;justify-self:center;width:100%}
+.vframe.wide{aspect-ratio:16/9}
+.vframe video{width:100%;height:100%;object-fit:cover;background:#06101F}
+.vframe .lbl{pointer-events:none}
+.miq-f{display:grid;grid-template-columns:repeat(auto-fit,minmax(10em,1fr));border-top:1.5px solid var(--ink);margin-top:26px}
+.miq-f div{padding:14px 12px 0 0;font-size:14px;color:var(--muted)}
+.miq-f b{display:block;font:800 21px/1 var(--disp);text-transform:uppercase;color:var(--ink);margin-bottom:6px}
+.va{display:grid;gap:34px;align-items:start}
+@media (min-width:980px){.va{grid-template-columns:1.35fr .65fr}}
+.va-h{font:800 24px/1.05 var(--disp);text-transform:uppercase;color:var(--ink);margin:0 0 6px}
+.vt{list-style:none;margin:0 0 24px;padding:0;border-top:1.5px solid var(--ink)}
+.vt li{display:grid;grid-template-columns:2.4em minmax(0,1fr);gap:8px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--muted)}
+.vt .n{font:500 12px/1.6 var(--mono);color:var(--accent)}
+.vt b{display:block;color:var(--ink);font-weight:600;font-size:15.5px;margin-bottom:2px}
+@media (min-width:980px){.va .vframe{position:sticky;top:140px}}

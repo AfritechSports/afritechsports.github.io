@@ -98,3 +98,9 @@ box.querySelector('.playb').addEventListener('click',function(){var u=(ep.href[L
 var f=box.querySelector('iframe');if(!f){f=d.createElement('iframe');f.loading='lazy';f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';f.title=title();box.appendChild(f)}
 f.src='https://open.spotify.com/embed/episode/'+id+'?utm_source=afritechsports'})}else box.hidden=true}}catch(e){}
 })();
+
+// MatchIQ promo in the visitor's language
+(function(){var v=document.querySelector('video[data-lv]');if(!v)return;var have={en:1,fr:1,sw:1};
+function set(){var l=(document.documentElement.lang||'en').slice(0,2);if(!have[l])l='en';var src='assets/media/matchiq-promo-'+l+'.mp4';
+if(v.dataset.cur===src)return;var playing=!v.paused;v.dataset.cur=src;v.poster='assets/media/matchiq-promo-'+l+'.jpg';v.querySelector('source').src=src;v.load();if(playing)v.play().catch(function(){})}
+set();document.querySelectorAll('.lr').forEach(function(x){x.addEventListener('change',function(){setTimeout(set,0)})})})();
