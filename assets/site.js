@@ -104,3 +104,24 @@ f.src='https://open.spotify.com/embed/episode/'+id+'?utm_source=afritechsports'}
 function set(){var l=(document.documentElement.lang||'en').slice(0,2);if(!have[l])l='en';var src='assets/media/matchiq-promo-'+l+'.mp4';
 if(v.dataset.cur===src)return;var playing=!v.paused;v.dataset.cur=src;v.poster='assets/media/matchiq-promo-'+l+'.jpg';v.querySelector('source').src=src;v.load();if(playing)v.play().catch(function(){})}
 set();document.querySelectorAll('.lr').forEach(function(x){x.addEventListener('change',function(){setTimeout(set,0)})})})();
+// Count-up figures
+(function(){var els=document.querySelectorAll('[data-count]');if(!els.length||!('IntersectionObserver' in window))return;
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);var el=e.target,end=+el.getAttribute('data-count'),t0=null;
+function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1400),v=Math.round(end*(1-Math.pow(1-k,3)));el.textContent=v;if(k<1)requestAnimationFrame(step)}el.textContent='0';requestAnimationFrame(step)})},{threshold:.6});
+els.forEach(function(e){io.observe(e)})})();
+// Feature videos: start playing when on screen; sound comes on with the visitor's first tap, click or key
+(function(){var vids=[].slice.call(document.querySelectorAll('video[data-auto]'));if(!vids.length)return;
+var c=navigator.connection||{},lite=c.saveData||/(^|-)2g/.test(c.effectiveType||'');
+var unlocked=false,current=null;
+function btn(v){return v.parentNode.querySelector('[data-sound]')}
+function withSound(v){vids.forEach(function(o){if(o!==v){o.muted=true;var b=btn(o);if(b)b.hidden=false}});v.muted=false;v.volume=1;var b=btn(v);if(b)b.hidden=true;var p=v.play();if(p&&p.catch)p.catch(function(){v.muted=true;if(b)b.hidden=false})}
+vids.forEach(function(v){var b=btn(v);if(b)b.addEventListener('click',function(e){e.stopPropagation();unlocked=true;withSound(v)});
+v.addEventListener('volumechange',function(){var b=btn(v);if(b)b.hidden=!v.muted});
+v.addEventListener('play',function(){current=v})});
+if(!lite&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+if(e.isIntersecting&&e.intersectionRatio>=.5){if(v.dataset.stopped)return;if(unlocked)withSound(v);else{v.muted=true;v.play().catch(function(){})}}
+else if(!v.paused){v._auto=1;v.pause()}})},{threshold:[0,.5]});vids.forEach(function(v){io.observe(v);v.addEventListener('pause',function(){if(v._auto){v._auto=0;return}if(!v.ended)v.dataset.stopped=1});v.addEventListener('play',function(){delete v.dataset.stopped})})}
+function unlock(){if(unlocked)return;unlocked=true;var v=vids.filter(function(x){return !x.paused})[0];if(v)withSound(v)}
+['pointerdown','keydown','touchstart'].forEach(function(ev){document.addEventListener(ev,unlock,{once:true,passive:true})});
+})();
