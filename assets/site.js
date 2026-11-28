@@ -68,3 +68,33 @@ document.querySelectorAll('[data-pick]').forEach(function(b){b.addEventListener(
 var tp=this.getAttribute('data-topic');var tt=null;if(tp){try{tt=JSON.parse(tp)[lang()]}catch(x){}}
 open(tt,this.getAttribute('data-pick'))})})}
 })();
+// v2 motion layer: reveal on scroll, data-aware video, podcast player
+(function(){
+var d=document,root=d.documentElement;root.classList.remove('no-js');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+// reveal
+try{var rv=d.querySelectorAll('.rv');if(!('IntersectionObserver' in window)||reduce){rv.forEach(function(e){e.classList.add('in-view')})}
+else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});rv.forEach(function(e){io.observe(e)});
+var tk=0;function sweep(){tk=0;var h=innerHeight*1.05;rv.forEach(function(e){if(!e.classList.contains('in-view')&&e.getBoundingClientRect().top<h)e.classList.add('in-view')})}
+addEventListener('scroll',function(){if(!tk)tk=requestAnimationFrame(sweep)},{passive:true});addEventListener('load',sweep);sweep()}}catch(e){}
+// video only on good connections: phones on data keep the still poster
+var c=navigator.connection||{},lite=c.saveData||/(^|-)2g|3g/.test(c.effectiveType||'');
+var vids=d.querySelectorAll('video[data-src]');
+function load(v){if(v.src)return;v.src=v.getAttribute('data-src');var p=v.play();if(p&&p.catch)p.catch(function(){})}
+if(!lite&&!reduce&&'IntersectionObserver' in window){var vo=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(!v.src)load(v);else if(!v.dataset.paused)v.play().catch(function(){})}else if(v.src)v.pause()})},{threshold:.25});vids.forEach(function(v){vo.observe(v)})}
+// play/pause button
+d.querySelectorAll('[data-pp]').forEach(function(b){var v=b.parentNode.querySelector('video');if(!v)return;
+function ic(play){b.innerHTML=play?'<svg viewBox="0 0 14 14"><path d="M2 1l11 6-11 6z"/></svg>':'<svg viewBox="0 0 14 14"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg>';b.setAttribute('aria-label',play?'Play video':'Pause video')}
+if(lite||reduce)ic(true);
+b.addEventListener('click',function(){if(!v.src){load(v);delete v.dataset.paused;ic(false);return}if(v.paused){delete v.dataset.paused;v.play();ic(false)}else{v.dataset.paused=1;v.pause();ic(true)}})});
+// podcast: newest episode in the visitor's language, Spotify loads only on tap
+try{var A=window.AFTS,box=d.querySelector('[data-player]');if(A&&box){
+var eps=A.news.filter(function(n){return n.href&&typeof n.href==='object'&&/open\.spotify\.com\/episode/.test(n.href.en||'')}).sort(function(a,b){return a.date<b.date?1:-1});
+var ep=eps[0];function L(){return(root.lang||'en').slice(0,2)}
+function title(){var h=ep.h[L()]||ep.h.en;return h.replace(/^[^:]+:\s*/,'')}
+function paint(){var s=box.querySelector('[data-ep]');if(s)s.textContent=title()}
+if(ep){paint();d.querySelectorAll('.lr').forEach(function(x){x.addEventListener('change',function(){setTimeout(paint,0)})});
+box.querySelector('.playb').addEventListener('click',function(){var u=(ep.href[L()]||ep.href.en),id=u.split('/episode/')[1].split('?')[0];
+var f=box.querySelector('iframe');if(!f){f=d.createElement('iframe');f.loading='lazy';f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';f.title=title();box.appendChild(f)}
+f.src='https://open.spotify.com/embed/episode/'+id+'?utm_source=afritechsports'})}else box.hidden=true}}catch(e){}
+})();
