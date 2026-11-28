@@ -125,3 +125,30 @@ else if(!v.paused){v._auto=1;v.pause()}})},{threshold:[0,.5]});vids.forEach(func
 function unlock(){if(unlocked)return;unlocked=true;var v=vids.filter(function(x){return !x.paused})[0];if(v)withSound(v)}
 ['pointerdown','keydown','touchstart'].forEach(function(ev){document.addEventListener(ev,unlock,{once:true,passive:true})});
 })();
+// v4: full-screen menu
+(function(){var b=document.querySelector('.menu-btn'),m=document.getElementById('menu');if(!b||!m)return;var root=document.documentElement;
+function set(o){root.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o);m.setAttribute('aria-hidden',!o);if(o){var f=m.querySelector('a,button');if(f)setTimeout(function(){f.focus()},300)}}
+b.addEventListener('click',function(){set(!root.classList.contains('menu-open'))});
+m.addEventListener('click',function(e){if(e.target.closest('a,button'))set(false)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&root.classList.contains('menu-open')){set(false);b.focus()}})})();
+// v4: roll-over text on buttons and menu links (letters stagger in the menu)
+(function(){function letters(n){var w=document.createTreeWalker(n,NodeFilter.SHOW_TEXT,null),list=[],x;while(x=w.nextNode())list.push(x);var i=0;list.forEach(function(tn){var f=document.createDocumentFragment();tn.nodeValue.split('').forEach(function(c){if(c===' '){f.appendChild(document.createTextNode(' '));return}var s=document.createElement('span');s.className='ch';s.style.setProperty('--i',i++);s.textContent=c;f.appendChild(s)});tn.parentNode.replaceChild(f,tn)})}
+function roll(el,split){if(el.querySelector('.rl'))return;var inner=el.innerHTML;el.innerHTML='<span class="rl"><span class="r1">'+inner+'</span><span class="r2" aria-hidden="true">'+inner+'</span></span>';if(split){el.querySelectorAll('.r1,.r2').forEach(letters)}}
+document.querySelectorAll('.btn:not([data-p]),.menu-btn .mb-l').forEach(function(el){roll(el,false)});
+document.querySelectorAll('.mlist .ml').forEach(function(el){roll(el,true)})})();
+// v4: hero project showcase, auto-advancing with wipe and phone flip
+(function(){var sh=document.querySelector('[data-show]');if(!sh)return;var D=5200,mons=sh.querySelectorAll('.mon .sl'),phs=sh.querySelectorAll('.ph .sl'),meta=sh.querySelectorAll('.smeta'),dots=sh.querySelectorAll('.dots button'),pp=sh.querySelector('[data-show-pp]'),i=0,timer=null,paused=false;
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+sh.style.setProperty('--dur',D+'ms');
+function ld(img){if(img&&img.dataset.src){img.src=img.dataset.src;img.removeAttribute('data-src')}}
+function go(n){i=(n+mons.length)%mons.length;[mons,phs,meta,dots].forEach(function(g){g.forEach(function(e,k){e.classList.toggle('on',k===i)})});ld(mons[(i+1)%mons.length]);ld(phs[(i+1)%phs.length]);
+dots.forEach(function(d){d.style.animation='none';d.offsetHeight;d.style.animation=''});arm()}
+function arm(){clearTimeout(timer);if(!paused)timer=setTimeout(function(){go(i+1)},D)}
+dots.forEach(function(d,k){d.addEventListener('click',function(){go(k)})});
+var ico=function(p){pp.innerHTML=p?'<svg viewBox="0 0 14 14"><path d="M2 1l11 6-11 6z"/></svg>':'<svg viewBox="0 0 14 14"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg>';pp.setAttribute('aria-label',p?'Play the showcase':'Pause the showcase')};
+pp.addEventListener('click',function(){paused=!paused;sh.classList.toggle('paused',paused);ico(paused);if(paused)clearTimeout(timer);else arm()});
+if(reduce){paused=true;sh.classList.add('paused');ico(true)}
+ld(mons[1]);ld(phs[1]);arm();
+document.addEventListener('visibilitychange',function(){if(document.hidden)clearTimeout(timer);else arm()})})();
+// v4: tap to flip cards on touch screens
+(function(){document.querySelectorAll('.fc').forEach(function(c){c.addEventListener('click',function(e){if(e.target.closest('a,button'))return;if(window.matchMedia('(hover:none)').matches)c.classList.toggle('flipped')})})})();

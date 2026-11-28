@@ -32,6 +32,7 @@ tail = src[src.index('<div class="modal" id="picker"'):]
 foot = re.search(r'<footer class="foot">.*?</footer>', src, re.S).group(0)
 
 DESK = 'https://afritech-advisory.github.io/Afritech-Advisory-afritech-tournament-desk/'
+MIQ_URL = 'https://afritech-advisory.github.io/afritech-matchiq/matches/2026-11-07-japan-nigeria-u17w-final/'
 MIQ = 'https://afritech-advisory.github.io/afritech-matchiq/matches/2026-11-07-japan-nigeria-u17w-final/'
 CVD = 'https://afritech-advisory.github.io/afritech-sports-cv-desk/'
 
@@ -42,6 +43,37 @@ if 'class="live"' not in header:
 
 arrow = '<span class="ar" aria-hidden="true">→</span>'
 SND = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>' + t('Tap for sound', 'Activer le son', 'Gusa kupata sauti', 'Toque para ouvir')
+PROJ = [
+ dict(k='miq', href=MIQ_URL, d='assets/work/miq-desktop.webp', m='assets/work/miq-phone.webp',
+      lab=('Match report','Rapport de match','Ripoti ya mechi','Relatório de partida'),
+      h=('MatchIQ · U-17 World Cup final','MatchIQ · finale Coupe du monde U-17','MatchIQ · fainali Kombe la Dunia U-17','MatchIQ · final da Copa Sub-17'),
+      p=('Nigeria 2–1 Japan, read goal by goal: radars, phase reads and five dated next steps.','Nigeria 2–1 Japon, but par but : radars, lectures de phases et cinq étapes datées.','Nigeria 2–1 Japan, bao kwa bao: rada, uchambuzi wa awamu na hatua tano zenye tarehe.','Nigéria 2–1 Japão, gol a gol: radares, leitura das fases e cinco passos com data.')),
+ dict(k='analysis', href='#video-analysis', d='assets/work/analysis-desktop.webp', m='assets/work/analysis-phone.webp',
+      lab=('Video analysis','Analyse vidéo','Uchambuzi wa video','Análise de vídeo'),
+      h=('Kenya 1–2 South Africa','Kenya 1–2 Afrique du Sud','Kenya 1–2 Afrika Kusini','Quênia 1–2 África do Sul'),
+      p=('Post-match coaching review with tactical reconstruction and xT.','Revue d’après-match avec reconstruction tactique et xT.','Mapitio ya kocha baada ya mechi, na uundaji upya wa mbinu na xT.','Revisão pós-jogo com reconstrução tática e xT.')),
+ dict(k='dossier', href='https://afritech-advisory.github.io/afritech-sports-cv-desk/scouts/alen-suljic/#verified', d='assets/work/dossier-desktop.webp', m='assets/work/dossier-phone.webp',
+      lab=('Scouting dossier','Dossier de recrutement','Ripoti ya uskauti','Dossiê de scouting'),
+      h=('Scouting dossiers','Dossiers de recrutement','Ripoti za uskauti','Dossiês de scouting'),
+      p=('One player, eleven checks, one clear verdict a club or agent can act on.','Un joueur, onze vérifications, un avis clair pour agir.','Mchezaji mmoja, ukaguzi kumi na moja, uamuzi mmoja wa wazi.','Um jogador, onze verificações, uma recomendação clara.')),
+ dict(k='desk', href=DESK + 'qatar-u17-2026/', d='assets/work/desk-desktop.webp', m='assets/work/desk-phone.webp',
+      lab=('Live desk','Desk en direct','Dawati hewani','Mesa ao vivo'),
+      h=('Tournament Desk · Qatar 2026','Desk Tournoi · Qatar 2026','Dawati la Mashindano · Qatar 2026','Mesa do Torneio · Catar 2026'),
+      p=('Africa’s ten nations at the U-17 World Cup, match by match, players scored.','Les dix nations africaines à la Coupe du monde U-17, match par match, joueurs notés.','Mataifa kumi ya Afrika Kombe la Dunia U-17, mechi kwa mechi, wachezaji wakipewa alama.','As dez seleções africanas na Copa Sub-17, jogo a jogo, jogadores avaliados.')),
+ dict(k='cv', href=CVD, d='assets/work/cv-desktop.webp', m='assets/work/scout-phone.webp',
+      lab=('CV Desk','Bureau CV','Dawati la CV','Mesa de Currículos'),
+      h=('Football CVs','CV football','CV za soka','Currículos de futebol'),
+      p=('Players, coaches, scouts and analysts, built to our standard so clubs can find them.','Joueurs, entraîneurs, recruteurs et analystes, à notre standard pour être trouvés.','Wachezaji, makocha, maskauti na wachambuzi, kwa kiwango chetu ili klabu ziwapate.','Jogadores, treinadores, olheiros e analistas, no nosso padrão para serem encontrados.')),
+ dict(k='insait', href='technology/', d='assets/work/insait-desktop.webp', m='assets/work/insait-phone.webp',
+      lab=('Sports technology','Technologie sportive','Teknolojia ya michezo','Tecnologia esportiva'),
+      h=('INSAIT JOY smart shin guards','Protège-tibias connectés INSAIT JOY','Vilinda-muundi janja vya INSAIT JOY','Caneleiras inteligentes INSAIT JOY'),
+      p=('Every run, touch and kick, on the coach’s phone after the session.','Chaque course, touche et frappe, sur le téléphone du coach après la séance.','Kila mbio, mguso na teke, kwenye simu ya kocha baada ya mazoezi.','Cada corrida, toque e chute, no celular do treinador após o treino.')),
+ dict(k='soccerbee', href='technology/#soccerbee', d='assets/work/soccerbee-desktop.webp', m='assets/work/soccerbee-phone.webp',
+      lab=('Sports technology','Technologie sportive','Teknolojia ya michezo','Tecnologia esportiva'),
+      h=('Soccerbee GPS tracking','Suivi GPS Soccerbee','Ufuatiliaji wa GPS wa Soccerbee','Monitoramento GPS Soccerbee'),
+      p=('Top speed and high-speed running, benchmarked against players of the same age.','Vitesse max et course à haute intensité, comparées aux joueurs du même âge.','Kasi ya juu na mbio za kasi, zikilinganishwa na wachezaji wa umri sawa.','Velocidade máxima e corrida intensa, comparadas com jogadores da mesma idade.')),
+]
+
 pitch_svg = """<div class="fx" aria-hidden="true"><svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="gp" x1="0" x2="1"><stop offset="0" stop-color="#49C6F0" stop-opacity="0"/><stop offset=".6" stop-color="#5EE08A"/><stop offset="1" stop-color="#E9FFF0"/></linearGradient><linearGradient id="go" x1="0" x2="1"><stop offset="0" stop-color="#1F7FC4"/><stop offset=".5" stop-color="#5EE08A"/><stop offset="1" stop-color="#1F7FC4" stop-opacity=".2"/></linearGradient></defs>
 <g class="pitchlines"><rect x="40" y="40" width="1120" height="620"/><path d="M600 40V660"/><circle cx="600" cy="350" r="92"/><rect x="40" y="200" width="150" height="300"/><rect x="1010" y="200" width="150" height="300"/></g>
 <g class="orb"><ellipse cx="880" cy="350" rx="330" ry="120" fill="none" stroke="url(#go)" stroke-width="10" opacity=".55" transform="rotate(-24 880 350)"/></g>
@@ -55,24 +87,27 @@ pitch_svg = """<div class="fx" aria-hidden="true"><svg viewBox="0 0 1200 700" pr
 
 hero = f'''<section class="h-hero">{pitch_svg}<div class="h-in"><div>
 <p class="eyebrow">{t('Football scouting, match analysis and player data · Africa', 'Recrutement, analyse de match et données joueurs · Afrique', 'Uskauti wa soka, uchambuzi wa mechi na data za wachezaji · Afrika', 'Scouting, análise de partidas e dados de jogadores · África')}</p>
-<h1>{t('<span class="ln"><span>Find the <em>talent.</em></span></span><span class="ln"><span>Read the <em>game.</em></span></span><span class="ln"><span>Run the <em>tech.</em></span></span>',
-       '<span class="ln"><span>Trouver le <em>talent.</em></span></span><span class="ln"><span>Lire le <em>jeu.</em></span></span><span class="ln"><span>Faire tourner la <em>tech.</em></span></span>',
-       '<span class="ln"><span>Pata <em>vipaji.</em></span></span><span class="ln"><span>Soma <em>mchezo.</em></span></span><span class="ln"><span>Endesha <em>teknolojia.</em></span></span>',
-       '<span class="ln"><span>Encontre o <em>talento.</em></span></span><span class="ln"><span>Leia o <em>jogo.</em></span></span><span class="ln"><span>Faça a <em>tecnologia</em> funcionar.</span></span>')}</h1>
+<h1>{t('<span class="ln"><span>Find the <mark>talent.</mark></span></span><span class="ln"><span>Read the <em>game.</em></span></span><span class="ln"><span>Run the <em>tech.</em></span></span>',
+       '<span class="ln"><span>Trouver le <mark>talent.</mark></span></span><span class="ln"><span>Lire le <em>jeu.</em></span></span><span class="ln"><span>Faire tourner la <em>tech.</em></span></span>',
+       '<span class="ln"><span>Pata <mark>vipaji.</mark></span></span><span class="ln"><span>Soma <em>mchezo.</em></span></span><span class="ln"><span>Endesha <em>teknolojia.</em></span></span>',
+       '<span class="ln"><span>Encontre o <mark>talento.</mark></span></span><span class="ln"><span>Leia o <em>jogo.</em></span></span><span class="ln"><span>Faça a <em>tecnologia</em> funcionar.</span></span>')}</h1>
 {'<div class="lead">' + tp('Match reports, scouting dossiers, football CVs and player tracking for clubs, academies, agents and federations across Africa. Built in Nairobi, made to open on any phone, even with no signal.', 'Rapports de match, dossiers de recrutement, CV football et suivi des joueurs pour les clubs, académies, agents et fédérations d’Afrique. Conçus à Nairobi, lisibles sur n’importe quel téléphone, même sans réseau.', 'Ripoti za mechi, ripoti za uskauti, CV za soka na ufuatiliaji wa wachezaji kwa klabu, akademia, mawakala na mashirikisho kote Afrika. Zimetengenezwa Nairobi, zinafunguka kwenye simu yoyote, hata bila mtandao.', 'Relatórios de partida, dossiês de scouting, currículos de futebol e monitoramento de jogadores para clubes, academias, agentes e federações da África. Feitos em Nairóbi, abrem em qualquer celular, mesmo sem sinal.') + '</div>'}
 <div class="acts"><a class="btn go1" href="#first-move">{t('Pick your first move', 'Choisissez votre premier pas', 'Chagua hatua yako ya kwanza', 'Escolha seu primeiro passo')} {arrow}</a><a class="btn ghost" href="#work">{t('See the work', 'Voir le travail', 'Ona kazi yetu', 'Veja o trabalho')}</a></div>
 <div class="h-meta"><span>{t('<b>EN · FR · SW · PT</b> four languages', '<b>EN · FR · SW · PT</b> quatre langues', '<b>EN · FR · SW · PT</b> lugha nne', '<b>EN · FR · SW · PT</b> quatro idiomas')}</span><span>{t('<b>Works offline</b> on any phone', '<b>Hors ligne</b> sur tout téléphone', '<b>Bila mtandao</b> kwenye simu yoyote', '<b>Funciona offline</b> em qualquer celular')}</span></div>
 </div>
-<div class="stage"><button class="pp" type="button" aria-label="Pause video" data-pp><svg viewBox="0 0 14 14"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg></button>
-<div class="phone"><div class="screen"><video data-src="assets/media/matchiq-final.mp4" poster="assets/media/matchiq-final.jpg" muted loop playsinline preload="none" aria-label="Scrolling through the MatchIQ report on the FIFA U-17 Women's World Cup final"></video></div></div>
-<div class="chip c1"><b>16</b>{t('named sources', 'sources citées', 'vyanzo vilivyotajwa', 'fontes citadas')}</div>
-<div class="chip c2"><b>2–1</b>{t('Nigeria · final read', 'Nigeria · la finale lue', 'Nigeria · fainali', 'Nigéria · a final')}</div>
-<p class="cap">{t('MatchIQ · U-17 Women’s World Cup final', 'MatchIQ · finale Coupe du monde féminine U-17', 'MatchIQ · fainali ya Kombe la Dunia U-17', 'MatchIQ · final da Copa Feminina Sub-17')}</p></div>
+{f'''<div class="show" data-show>{"".join(f'<span hidden></span>' for _ in [])}
+<div class="dev"><div class="mon"><div class="mon-scr">{''.join(f'<img class="sl{" on" if n==0 else ""}" {"src" if n==0 else "data-src"}="{x["d"]}" alt="" width="1400" height="875">' for n,x in enumerate(PROJ))}</div><i class="mon-stand"></i></div>
+<div class="ph"><div class="ph-scr">{''.join(f'<img class="sl{" on" if n==0 else ""}" {"src" if n==0 else "data-src"}="{x["m"]}" alt="" width="560" height="1212">' for n,x in enumerate(PROJ))}</div></div></div>
+<div class="show-meta">{''.join(f'<a class="smeta{" on" if n==0 else ""}" href="{x["href"]}"{" target=_blank rel=noopener" if x["href"].startswith("http") else ""}><span class="lbl"><i></i>{t(*x["lab"])} · 0{n+1}/0{len(PROJ)}</span><b>{t(*x["h"])}</b>{t(*x["p"])}</a>' for n,x in enumerate(PROJ))}</div>
+<div class="show-ctl"><button type="button" class="pp" data-show-pp aria-label="Pause the showcase"><svg viewBox="0 0 14 14"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg></button><div class="dots">{''.join(f'<button type="button" aria-label="Project {n+1}"{" class=on" if n==0 else ""}></button>' for n in range(len(PROJ)))}</div></div>
+</div>'''}
 </div></section>'''
 
 tick_items = [('Match analysis','Analyse de match','Uchambuzi wa mechi','Análise de partidas'),('Scouting dossiers','Dossiers de recrutement','Ripoti za uskauti','Dossiês de scouting'),('Football CVs','CV football','CV za soka','Currículos de futebol'),('INSAIT JOY','INSAIT JOY','INSAIT JOY','INSAIT JOY'),('Soccerbee GPS','Soccerbee GPS','Soccerbee GPS','Soccerbee GPS'),('Contracts & transfers','Contrats & transferts','Mikataba na uhamisho','Contratos e transferências'),('Workshops','Ateliers','Warsha','Workshops'),('Tournament Desk','Desk Tournoi','Dawati la Mashindano','Mesa do Torneio')]
-tk = ''.join('<span>' + t(*i) + '</span>' for i in tick_items)
-ticker = f'<div class="tick" aria-hidden="true"><div class="tick-in">{tk}{tk}</div></div>'
+BALL = '<svg class="ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5"/><path d="M12 7.2l3.6 2.6-1.4 4.2H9.8L8.4 9.8z"/><path d="M12 1.5v5.7M15.6 9.8l5.2-1.6M14.2 14l3.2 4.6M9.8 14l-3.2 4.6M8.4 9.8L3.2 8.2"/></svg>'
+tk = ''.join(f'<span class="{"o" if n%2 else ""}">' + t(*i) + '</span>' + BALL for n,i in enumerate(tick_items))
+tk2 = ''.join(f'<span class="{"" if n%2 else "o"}">' + t(*i) + '</span>' + BALL for n,i in enumerate(reversed(tick_items)))
+ticker = f'<div class="ticks" aria-hidden="true"><div class="tick t1"><div class="tick-in">{tk}{tk}</div></div><div class="tick t2"><div class="tick-in rev">{tk2}{tk2}</div></div></div>'
 
 reality = f'''<section class="sx dark" id="reality"><div class="in"><div class="reality">
 <div><p class="kick">{t('The reality', 'La réalité', 'Ukweli', 'A realidade')}</p>
@@ -109,26 +144,25 @@ def mini(v, poster, alt):
     return f'<div class="mini"><div class="screen"><video data-src="{v}" poster="{poster}" muted loop playsinline preload="none" aria-label="{alt}"></video></div></div>'
 
 LIVE = t('Live', 'En ligne', 'Hewani', 'No ar')
-work = f'''<section class="sx" id="work"><div class="in">
+FLIP_BUL = {
+ 'miq': [('Goals and key moments, clip by clip','Buts et moments clés, séquence par séquence','Mabao na matukio muhimu, kipande kwa kipande','Gols e lances-chave, clipe a clipe'),('Player radars for both squads','Radars des joueuses des deux effectifs','Rada za wachezaji wa vikosi vyote','Radares das jogadoras dos dois elencos'),('Opens on any phone, offline','S’ouvre sur tout téléphone, hors ligne','Inafunguka kwenye simu yoyote, bila mtandao','Abre em qualquer celular, offline')],
+ 'dossier': [('Ratings, strengths, video evidence','Notes, points forts, preuves vidéo','Alama, uwezo, ushahidi wa video','Avaliações, pontos fortes, vídeo'),('Compared with players in the same position','Comparé aux joueurs du même poste','Ikilinganishwa na wa nafasi hiyo','Comparado com a mesma posição'),('Eleven checks before any verdict','Onze vérifications avant tout avis','Ukaguzi 11 kabla ya uamuzi','Onze verificações antes do veredito')],
+ 'desk': [('Every African squad, every match','Chaque sélection africaine, chaque match','Kila timu ya Afrika, kila mechi','Cada seleção africana, cada jogo'),('Players to watch, scored the same way','Joueurs à suivre, notés de la même façon','Wachezaji wa kufuatilia, kwa alama sawa','Jogadores a acompanhar, avaliados igual'),('Commission one for your competition','Commandez-en un pour votre compétition','Agiza moja kwa mashindano yako','Encomende uma para sua competição')],
+ 'cv': [('A short form on your phone','Un court formulaire sur téléphone','Fomu fupi kwenye simu','Um formulário curto no celular'),('Reviewed before anything is shared','Relu avant tout partage','Inapitiwa kabla ya kushirikishwa','Revisado antes de compartilhar'),('Four languages, four desks','Quatre langues, quatre desks','Lugha nne, madawati manne','Quatro idiomas, quatro mesas')],
+ 'insait': [('Sensor in each shin guard','Un capteur dans chaque protège-tibia','Kihisi ndani ya kila kilinda-muundi','Sensor em cada caneleira'),('Distance, sprints, kicks, foot use','Distance, sprints, frappes, pied utilisé','Umbali, mbio, mateke, mguu unaotumika','Distância, sprints, chutes, pé usado'),('Set up at your ground, staff trained','Installé chez vous, staff formé','Tunasimika uwanjani, tunafunza wafanyakazi','Instalado no seu campo, equipe treinada')],
+ 'soccerbee': [('GPS pod in a light vest','Boîtier GPS dans un gilet léger','Kifaa cha GPS ndani ya fulana nyepesi','Sensor GPS em colete leve'),('Benchmarked against peers','Comparé aux pairs','Ikilinganishwa na wenzao','Comparado com os pares'),('Built for youth and academy squads','Conçu pour les jeunes et les académies','Kwa vikosi vya vijana na akademia','Feito para base e academias')]}
+FLIP_CTA = {'miq':(('Get your match read','Faites lire votre match','Chambuliwa mechi yako','Analise sua partida'),'club'),'dossier':(('Ask about a player','Demander pour un joueur','Uliza kuhusu mchezaji','Pergunte sobre um jogador'),'agent'),'desk':(('Commission a desk','Commander un desk','Agiza dawati','Encomende uma mesa'),'federation'),'cv':(('Start your CV','Commencer votre CV','Anza CV yako','Comece seu currículo'),'player'),'insait':(('Get a kit quote','Demander un devis','Pata bei ya vifaa','Peça um orçamento'),'club'),'soccerbee':(('Get a kit quote','Demander un devis','Pata bei ya vifaa','Peça um orçamento'),'club')}
+def flip(n, x):
+    ext = ' target="_blank" rel="noopener"' if x['href'].startswith('http') else ''
+    bl = ''.join('<li>' + t(*b) + '</li>' for b in FLIP_BUL[x['k']])
+    c = FLIP_CTA[x['k']]
+    return f'''<div class="fc rv" tabindex="0"><div class="fc-in"><div class="fc-f"><div class="fc-img"><img src="{x['d']}" alt="" loading="lazy" width="1400" height="875"><div class="fc-ph"><img src="{x['m']}" alt="" loading="lazy" width="560" height="1212"></div></div><div class="fc-cap"><span class="lbl"><i></i>{t(*x['lab'])}</span><h3>{t(*x['h'])}</h3><span class="fc-hint">{t('Hover to flip', 'Survolez pour retourner', 'Gusa kugeuza', 'Passe o mouse para virar')} ↻</span></div></div>
+<div class="fc-b"><span class="fc-n">0{n+1}</span><h3>{t(*x['h'])}</h3>{t(*x['p'], tag='p')}<ul>{bl}</ul><div class="acts"><button type="button" class="btn go1 sm" data-pick="{c[1]}" data-topic='{topic(*x['h'])}'>{t(*c[0])}</button><a class="btn ghost sm" href="{x['href']}"{ext}>{t('See it live', 'Voir en ligne', 'Ona hewani', 'Ver ao vivo')}</a></div></div></div></div>'''
+
+work = f'''<section class="sx band-mint" id="work"><div class="in">
 <div class="shead"><div><p class="kick">{t('Selected work', 'Travaux choisis', 'Kazi teule', 'Trabalhos selecionados')}</p><h2>{t('Work you can <em>open</em> today.', 'Du travail à <em>ouvrir</em> aujourd’hui.', 'Kazi unayoweza <em>kufungua</em> leo.', 'Trabalho para <em>abrir</em> hoje.')}</h2></div>
 {tp('Every piece below is live and public. No mock-ups, no stock photos: the same reports, desks and CVs our clients receive.', 'Tout ce qui suit est en ligne et public. Pas de maquettes, pas de photos de banque d’images : les mêmes rapports, desks et CV que reçoivent nos clients.', 'Kila kazi hapa chini iko hewani na wazi kwa umma. Hakuna picha za kuigiza: ni ripoti, madawati na CV zile zile wanazopokea wateja wetu.', 'Tudo abaixo está no ar e é público. Sem maquetes, sem fotos de banco: os mesmos relatórios, mesas e currículos que nossos clientes recebem.')}</div>
-<div class="work">
-{wk('w7', MIQ, ('wide', '<img class="cover" src="assets/img/final.jpg" alt="MatchIQ report: Japan 1, Nigeria 2" loading="lazy">'), LIVE, True,
-    t('MatchIQ · U-17 final', 'MatchIQ · finale U-17', 'MatchIQ · fainali U-17', 'MatchIQ · final Sub-17'),
-    t('Nigeria 2–1 Japan, read goal by goal: player radars, where each game broke down, five dated next steps.', 'Nigeria 2–1 Japon, but par but : radars des joueuses, où chaque jeu a cédé, cinq prochaines étapes datées.', 'Nigeria 2–1 Japan, bao kwa bao: rada za wachezaji, mchezo ulipovunjika, hatua tano zenye tarehe.', 'Nigéria 2–1 Japão, gol a gol: radares das jogadoras, onde cada jogo falhou, cinco próximos passos com data.'))}
-{wk('w5', DESK + 'qatar-u17-2026/', ('pitchbg tall', mini('assets/media/tournament-desk.mp4', 'assets/media/tournament-desk.jpg', 'Scrolling the Tournament Desk on a phone')), LIVE, True,
-    t('Tournament Desk', 'Desk Tournoi', 'Dawati la Mashindano', 'Mesa do Torneio'),
-    t('Africa’s ten nations at the FIFA U-17 World Cup, match by match, until 13 December.', 'Les dix nations africaines à la Coupe du monde U-17, match après match, jusqu’au 13 décembre.', 'Mataifa kumi ya Afrika Kombe la Dunia U-17, mechi kwa mechi, hadi 13 Desemba.', 'As dez seleções africanas na Copa Sub-17, jogo a jogo, até 13 de dezembro.'))}
-{wk('w4', CVD, ('inkbg tall', mini('assets/media/cv-desk.mp4', 'assets/media/cv-desk.jpg', 'Scrolling the CV Desk on a phone')), LIVE, True,
-    t('CV Desk', 'Bureau CV', 'Dawati la CV', 'Mesa de Currículos'),
-    t('Football CVs for players, coaches, scouts and analysts, built to our standard.', 'CV football pour joueurs, entraîneurs, recruteurs et analystes, à notre standard.', 'CV za soka kwa wachezaji, makocha, maskauti na wachambuzi, kwa kiwango chetu.', 'Currículos de futebol para jogadores, treinadores, olheiros e analistas, no nosso padrão.'))}
-{wk('w4', 'advisory/#education', ('sq', '<img class="cover" src="assets/img/webinar.jpg" alt="From Footage to Insight workshop poster" loading="lazy">'), t('Free workshop', 'Atelier gratuit', 'Warsha ya bure', 'Workshop gratuito'), False,
-    t('From Footage to Insight', 'From Footage to Insight', 'From Footage to Insight', 'From Footage to Insight'),
-    t('Live tagging of a real Kenyan match, with FootLab (Morocco).', 'Annotation en direct d’un vrai match kényan, avec FootLab (Maroc).', 'Kuwekea alama mechi halisi ya Kenya moja kwa moja, pamoja na FootLab (Morocco).', 'Marcação ao vivo de uma partida real do Quênia, com a FootLab (Marrocos).'))}
-{wk('w4', 'technology/', ('sq', '<img class="cover" src="assets/img/insait.jpg" alt="INSAIT JOY smart shin guards kit" loading="lazy">'), t('Hardware', 'Matériel', 'Vifaa', 'Equipamento'), False,
-    t('INSAIT JOY', 'INSAIT JOY', 'INSAIT JOY', 'INSAIT JOY'),
-    t('Smart shin guards: every run, touch and kick, on the coach’s phone after the session.', 'Protège-tibias connectés : chaque course, touche et frappe, sur le téléphone du coach.', 'Vilinda-muundi janja: kila mbio, mguso na teke, kwenye simu ya kocha baada ya mazoezi.', 'Caneleiras inteligentes: cada corrida, toque e chute, no celular do treinador.'))}
-</div>
+<div class="flips">{"".join(flip(n,x) for n,x in enumerate([p for p in PROJ if p["k"]!="analysis"]))}</div>
 {ctl(('Want your club’s next match to look like this?', 'Vous voulez que votre prochain match ressemble à ça ?', 'Ungependa mechi ijayo ya klabu yako ionekane hivi?', 'Quer que a próxima partida do seu clube fique assim?'), ('Send us your next match', 'Envoyez-nous votre prochain match', 'Tutumie mechi yako ijayo', 'Envie sua próxima partida'), 'club', topic('Match report','Rapport de match','Ripoti ya mechi','Relatório de partida'))}
 </div></section>'''
 
@@ -167,7 +201,7 @@ det = ''
 for i, s in enumerate(svc_items, 1):
     lis = ''.join('<li>' + t(*b) + '</li>' for b in s[6])
     det += f'''<details{" open" if i == 1 else ""}><summary><span class="n">0{i}</span><span class="sn">{t(*s[:4])}</span><span class="pl" aria-hidden="true"></span></summary><div class="body"><div>{tp(*s[5])}<div class="acts"><button type="button" class="btn go1 sm" data-pick="{svc_cta[i-1][1]}" data-topic='{topic(*s[:4])}'>{t(*svc_cta[i-1][0])} {arrow}</button><a class="btn ghost sm" href="{s[4]}">{t('Read more', 'En savoir plus', 'Soma zaidi', 'Saiba mais')}</a></div></div><ul>{lis}</ul></div></details>'''
-services = f'''<section class="sx dark" id="services"><div class="in">
+services = f'''<section class="sx deep" id="services"><div class="in">
 <div class="shead"><div><p class="kick">{t('What we do', 'Ce que nous faisons', 'Tunachofanya', 'O que fazemos')}</p><h2>{t('Seven ways we <em>help</em> you win.', 'Sept façons de vous <em>aider</em> à gagner.', 'Njia saba za <em>kukusaidia</em> kushinda.', 'Sete formas de <em>ajudar</em> você a vencer.')}</h2></div>
 {tp('Evidence for every football decision, from the first scouting trip to the transfer paperwork.', 'Des preuves pour chaque décision football, du premier déplacement de recrutement aux papiers du transfert.', 'Ushahidi kwa kila uamuzi wa soka, kuanzia safari ya kwanza ya uskauti hadi nyaraka za uhamisho.', 'Evidências para cada decisão no futebol, da primeira viagem de scouting à papelada da transferência.')}</div>
 <div class="svc">{det}</div></div></section>'''
@@ -177,7 +211,7 @@ def mv(no, tag, price, h, items, btn, fine, feat=False, pick=None, href=None):
     b = f'<button type="button" class="btn {"go1" if feat else "ghost"}" data-pick="{pick or ""}" data-topic=\'{btn[1]}\'>{t(*btn[0])} {arrow}</button>' if href is None else f'<a class="btn {"go1" if feat else "ghost"}" href="{href}">{t(*btn[0])} {arrow}</a>'
     return f'<div class="mv rv{" feat" if feat else ""}"><div class="no"><span>{no}</span><span>{t(*tag)}</span></div><div class="price">{t(*price)}</div><h3>{t(*h)}</h3><ul>{lis}</ul>{b}<p class="fine">{t(*fine)}</p></div>'
 
-moves = f'''<section class="sx" id="first-move"><div class="in">
+moves = f'''<section class="sx dark" id="first-move"><div class="in">
 <div class="shead"><div><p class="kick">{t('Three ways to start', 'Trois façons de commencer', 'Njia tatu za kuanza', 'Três formas de começar')}</p><h2>{t('Pick your first <em>move.</em>', 'Votre premier <em>pas.</em>', 'Chagua hatua ya <em>kwanza.</em>', 'Escolha o primeiro <em>passo.</em>')}</h2></div>
 {tp('All three are low risk. See our work on your own match first, learn with us for free, or put one player under the microscope.', 'Les trois sont sans risque. Voyez notre travail sur votre propre match, apprenez gratuitement avec nous, ou passez un joueur au microscope.', 'Zote tatu hazina hatari. Ona kazi yetu kwenye mechi yako kwanza, jifunze nasi bure, au mchunguze mchezaji mmoja kwa kina.', 'As três têm baixo risco. Veja nosso trabalho na sua própria partida, aprenda com a gente de graça ou coloque um jogador no microscópio.')}</div>
 <div class="moves">
@@ -220,7 +254,7 @@ method = f'''<section class="sx ink" id="method"><div class="in"><div class="met
 {ctl(('Got a player you’re unsure about?', 'Un joueur vous fait hésiter ?', 'Una mchezaji unayemtilia shaka?', 'Tem um jogador que gera dúvida?'), ('Run the 11 checks', 'Lancer les 11 vérifications', 'Mfanyie ukaguzi 11', 'Faça as 11 verificações'), 'agent', topic('Scouting dossier','Dossier de recrutement','Ripoti ya uskauti','Dossiê de scouting'))}
 </div></div></div></section>'''
 
-listen = f'''<section class="sx" id="listen"><div class="in"><div class="listen">
+listen = f'''<section class="sx band-mint" id="listen"><div class="in"><div class="listen">
 <div class="cover rv"><img src="assets/img/podcast.jpg" alt="Deep Dive Into Soccer podcast: 5,000 streams and downloads" loading="lazy"><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
 <div><p class="kick">{t('Listen', 'Écouter', 'Sikiliza', 'Ouça')}</p>
 <h2>{t('Deep Dive Into <em>Soccer.</em>', 'Deep Dive Into <em>Soccer.</em>', 'Deep Dive Into <em>Soccer.</em>', 'Deep Dive Into <em>Soccer.</em>')}</h2>
@@ -238,14 +272,17 @@ founder = f'''<section class="sx" id="about" style="padding-top:0"><div class="i
 <div class="facts"><div><b>NBO</b><span>{t('Based in Nairobi, on the ground in Kenya', 'Basés à Nairobi, sur le terrain au Kenya', 'Tuko Nairobi, uwanjani Kenya', 'Em Nairóbi, presentes no Quênia')}</span></div><div><b>4</b><span>{t('Lawyer, coaches, finance, sports tech', 'Avocat, entraîneurs, finance, tech sportive', 'Mwanasheria, makocha, fedha, teknolojia', 'Advogado, treinadores, finanças, tecnologia')}</span></div><div><b>4</b><span>{t('Languages: English, French, Swahili, Portuguese', 'Langues : anglais, français, swahili, portugais', 'Lugha: Kiingereza, Kifaransa, Kiswahili, Kireno', 'Idiomas: inglês, francês, suaíli, português')}</span></div></div>
 </div></div></div></section>'''
 
-steps = [('Tell us','Dites-nous','Tuambie','Conte pra gente','Who you are and what you need, on WhatsApp or email.','Qui vous êtes et ce dont vous avez besoin, sur WhatsApp ou par e-mail.','Wewe ni nani na unahitaji nini, kwa WhatsApp au barua pepe.','Quem você é e o que precisa, no WhatsApp ou por e-mail.'),
- ('We scope it','Nous cadrons','Tunapanga','A gente define','A clear plan, a price and a date before any work starts.','Un plan clair, un prix et une date avant tout travail.','Mpango wa wazi, bei na tarehe kabla ya kazi kuanza.','Um plano claro, um preço e uma data antes de começar.'),
- ('We deliver','Nous livrons','Tunawasilisha','A gente entrega','Reports, dossiers, CVs or kit, on your phone, in your language.','Rapports, dossiers, CV ou matériel, sur votre téléphone, dans votre langue.','Ripoti, CV au vifaa, kwenye simu yako, kwa lugha yako.','Relatórios, dossiês, currículos ou equipamento, no seu celular, no seu idioma.'),
- ('We stay','Nous restons','Tunabaki nawe','A gente fica','Support through the season, not just the handover.','Un suivi toute la saison, pas seulement à la livraison.','Msaada msimu mzima, si siku ya kukabidhi tu.','Suporte durante a temporada, não só na entrega.')]
-proc = ''.join(f'<div class="st rv"><b>{t(*s[:4])}</b>{t(*s[4:])}</div>' for s in steps)
-process = f'''<section class="sx" style="padding-top:0"><div class="in"><p class="kick">{t('How we work', 'Notre façon de travailler', 'Jinsi tunavyofanya kazi', 'Como trabalhamos')}</p><h2>{t('Four steps. <em>No surprises.</em>', 'Quatre étapes. <em>Aucune surprise.</em>', 'Hatua nne. <em>Hakuna mshangao.</em>', 'Quatro passos. <em>Sem surpresas.</em>')}</h2><div class="steps" style="margin-top:34px">{proc}</div></div></section>'''
+steps = [(('Tell <em>us</em>','Parlez-<em>nous</em>','<em>Tuambie</em>','<em>Conte</em> pra gente'),('Who you are and what you need, on WhatsApp or email.','Qui vous êtes et ce dont vous avez besoin, sur WhatsApp ou par e-mail.','Wewe ni nani na unahitaji nini, kwa WhatsApp au barua pepe.','Quem você é e o que precisa, no WhatsApp ou por e-mail.')),
+ (('The <em>plan</em>','Le <em>plan</em>','<em>Mpango</em>','O <em>plano</em>'),('A clear scope, a price and a date before any work starts.','Un cadre clair, un prix et une date avant tout travail.','Mpango wa wazi, bei na tarehe kabla ya kazi kuanza.','Escopo claro, preço e data antes de começar.')),
+ (('The <em>delivery</em>','La <em>livraison</em>','<em>Uwasilishaji</em>','A <em>entrega</em>'),('Reports, dossiers, CVs or kit, on your phone, in your language.','Rapports, dossiers, CV ou matériel, sur votre téléphone, dans votre langue.','Ripoti, CV au vifaa, kwenye simu yako, kwa lugha yako.','Relatórios, dossiês, currículos ou equipamento, no seu celular.')),
+ (('The <em>season</em>','La <em>saison</em>','<em>Msimu</em>','A <em>temporada</em>'),('We stay with you through the season, not just the handover.','Nous restons à vos côtés toute la saison.','Tunabaki nawe msimu mzima, si siku ya kukabidhi tu.','Ficamos com você a temporada toda.'))]
+proc = ''.join(f'<div class="step rv"><span class="sn">0{n}</span><h3>{t(*a)}</h3>{t(*b, tag="p")}</div>' for n,(a,b) in enumerate(steps,1))
+process = f'''<section class="sx steps4" id="process"><div class="in"><div class="shead"><div><p class="kick">{t('How we work', 'Notre façon de travailler', 'Jinsi tunavyofanya kazi', 'Como trabalhamos')}</p><h2>{t('Four steps. <em>No surprises.</em>', 'Quatre étapes. <em>Aucune surprise.</em>', 'Hatua nne. <em>Hakuna mshangao.</em>', 'Quatro passos. <em>Sem surpresas.</em>')}</h2></div>{tp('From the first message to the last match of the season, you always know what happens next.', 'Du premier message au dernier match de la saison, vous savez toujours ce qui suit.', 'Kuanzia ujumbe wa kwanza hadi mechi ya mwisho ya msimu, unajua kinachofuata.', 'Da primeira mensagem ao último jogo da temporada, você sempre sabe o que vem depois.')}</div>
+<div class="steps-g">{proc}</div>
+{ctl(('Ready for step one?', 'Prêt pour la première étape ?', 'Uko tayari kwa hatua ya kwanza?', 'Pronto para o primeiro passo?'), ('Tell us what you need', 'Dites-nous ce qu’il vous faut', 'Tuambie unachohitaji', 'Conte o que precisa'), '')}
+</div></section>'''
 
-final = f'''<section class="sx dark final" id="contact"><div class="in">
+final = f'''<section class="sx final grad" id="contact"><div class="in">
 <p class="kick">{t('Kick-off', 'Coup d’envoi', 'Mwanzo wa mchezo', 'Pontapé inicial')}</p>
 <h2>{t('Your next decision deserves <em>evidence.</em>', 'Votre prochaine décision mérite des <em>preuves.</em>', 'Uamuzi wako ujao unastahili <em>ushahidi.</em>', 'Sua próxima decisão merece <em>evidências.</em>')}</h2>
 <div class="acts"><button type="button" class="btn wa" data-pick="">{t('Message us on WhatsApp', 'Écrivez-nous sur WhatsApp', 'Tutumie ujumbe WhatsApp', 'Fale com a gente no WhatsApp')} {arrow}</button><a class="btn ghost" href="mailto:Advisory@afritechsports.com">{t('Email us', 'Envoyez-nous un e-mail', 'Tutumie barua pepe', 'Mande um e-mail')}</a></div>
@@ -272,7 +309,7 @@ va_types = [('Post-match coaching review','Revue d’après-match pour le staff'
  ('Player clip reels','Montages vidéo de joueurs','Video fupi za mchezaji','Vídeos de jogadores','Each player’s actions in one reel, for coaching, scouting dossiers and CVs.','Les actions d’un joueur dans un montage, pour le coaching, les dossiers et les CV.','Matendo ya mchezaji katika video moja, kwa ukocha, ripoti za uskauti na CV.','As ações de cada jogador num vídeo, para treino, dossiês e currículos.'),
  ('Tournament and squad packages','Forfaits tournoi et sélection','Vifurushi vya mashindano na timu za taifa','Pacotes de torneio e seleção','For federations: every match of a squad or competition, in four languages.','Pour les fédérations : chaque match d’une sélection ou d’une compétition, en quatre langues.','Kwa mashirikisho: kila mechi ya timu au mashindano, kwa lugha nne.','Para federações: cada jogo de uma seleção ou competição, em quatro idiomas.')]
 va_rows = ''.join(f'<li><span class="n">{i:02d}</span><div><b>{t(*v[:4])}</b>{t(*v[4:])}</div></li>' for i, v in enumerate(va_types, 1))
-video = f"""<section class="sx" id="video-analysis" style="padding-top:0"><div class="in">
+video = f"""<section class="sx band-sky" id="video-analysis"><div class="in">
 <div class="shead"><div><p class="kick">{t('Video analysis · Kenya 1–2 South Africa', 'Analyse vidéo · Kenya 1–2 Afrique du Sud', 'Uchambuzi wa video · Kenya 1–2 Afrika Kusini', 'Análise de vídeo · Quênia 1–2 África do Sul')}</p><h2>{t('One match. Every <em>angle.</em>', 'Un match. Tous les <em>angles.</em>', 'Mechi moja. Kila <em>pembe.</em>', 'Uma partida. Todos os <em>ângulos.</em>')}</h2></div>
 {tp('Our post-match analysis of Kenya’s 2–1 defeat to South Africa: Kenya had 57% of the ball and two shots on target, South Africa had eight. Here is how each side found its final touch, and what a coaching staff takes from it.', 'Notre analyse d’après-match de la défaite 2–1 du Kenya face à l’Afrique du Sud : 57 % de possession et deux tirs cadrés pour le Kenya, huit pour l’Afrique du Sud. Voici comment chaque équipe a trouvé sa dernière touche, et ce qu’un staff en retient.', 'Uchambuzi wetu wa kipigo cha Kenya cha 2–1 dhidi ya Afrika Kusini: Kenya ilimiliki mpira 57% na mashuti mawili yaliyolenga lango, Afrika Kusini manane. Hivi ndivyo kila timu ilivyopata mguso wa mwisho, na kile benchi la ufundi linachojifunza.', 'Nossa análise pós-jogo da derrota do Quênia por 2–1 para a África do Sul: 57% de posse e duas finalizações no alvo para o Quênia, oito para a África do Sul. Veja como cada lado encontrou o toque final, e o que uma comissão técnica tira disso.')}</div>
 <div class="va"><div class="vframe wide rv"><button class="sound" type="button" data-sound>{SND}</button><video data-auto controls playsinline muted preload="metadata" poster="assets/media/kenya-south-africa-analysis.jpg" aria-label="MatchIQ post-match analysis: Kenya 1, South Africa 2"><source src="assets/media/kenya-south-africa-analysis.mp4" type="video/mp4"></video><span class="lbl s"><i></i>MatchIQ · {t('Post-match analysis', 'Analyse d’après-match', 'Uchambuzi baada ya mechi', 'Análise pós-jogo')}</span></div>
@@ -292,7 +329,7 @@ head = _re.sub(r'<meta property="og:description" content="[^"]*">', '<meta prope
 if 'theme-color' not in head:
     head = head.replace('<meta charset="utf-8">', '<meta charset="utf-8"><meta name="theme-color" content="#0B2A21">', 1)
 if 'rel="preload"' not in head:
-    head = head.replace('</head>', '<link rel="preload" href="assets/fonts/bsd-800.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/plex-400.woff2" as="font" type="font/woff2" crossorigin>\n</head>', 1)
+    head = head.replace('</head>', '<link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/archivo-400.woff2" as="font" type="font/woff2" crossorigin>\n</head>', 1)
 out = head + header + main + tail
 (R / 'index.html').write_text(out, encoding='utf-8')
 print('index.html', len(out))
